@@ -3,51 +3,58 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fdf6ee">
-<title>Equipment — Sasazuka 2Chome</title>
+<meta name="theme-color" content="#f7f9fc">
+<title>Equipment - Sasazuka 2Chome</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
+<style>.sub-lang-bar{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px 12px 12px}.sub-lang-bar .lang-btn.active{background:var(--teal-dark);color:#fff;border-color:var(--teal-dark)}.content a,.wifi-detail a{color:var(--teal-dark);font-weight:900}.content ul{font-weight:750}.content strong{color:var(--teal-dark)}</style>
 </head>
 <body>
 <main>
-<div class="top"><a class="back" href="../">←</a><h1>🛠️ Equipment</h1></div>
-<article class="content">
-<h3>TV Remote</h3>
-<p>テレビリモコン</p>
-<figure><img src="../images/.png" alt="TV remote" loading="lazy"></figure>
-<h4>① ON/OFF</h4>
-<p>② Volume</p>
-<p>③ Channel</p>
-<p>④ Input switching</p>
-<h3>Air Conditioner Remote</h3>
-<p>エアコンのリモコン</p>
-<h4>① 暖房 heating</h4>
-<p>② 冷房 cooling</p>
-<p>③ 除湿 dry</p>
-<p>④ 温度 temperature</p>
-<p>⑤ 停止 stop</p>
-<figure><img src="../images/名称未設定のデザイン_(17).png" alt="Air conditioner remote" loading="lazy"></figure>
-<figure><img src="../images/.jpg" alt="Air conditioner guide 1" loading="lazy"></figure>
-<figure><img src="../images/.jpg" alt="Air conditioner guide 2" loading="lazy"></figure>
-<h4>① ON/OFF</h4>
-<p>② Change the running mode</p>
-<p>暖房: heater</p>
-<p>冷房: cooler</p>
-<p>③ 温度 temperature</p>
-<h3>Washlet (Bidet)</h3>
-<p>ウォシュレット</p>
-<figure><img src="../images/_(1).png" alt="Washlet controls" loading="lazy"></figure>
-<h4>① OFF</h4>
-<p>② Shower toilet</p>
-<p>③④ Flush</p>
-<h3>Intercom</h3>
-<p>ドアホン</p>
-<figure><img src="../images/_(4).png" alt="Intercom" loading="lazy"></figure>
-<h4>① Call</h4>
-<p>② Off</p>
-</article>
+<nav class="sub-lang-bar" aria-label="Language"><button class="lang-btn active" onclick="setLang('en', this)">EN</button><button class="lang-btn" onclick="setLang('ja', this)">JA</button><button class="lang-btn" onclick="setLang('zh', this)">ZH</button><button class="lang-btn" onclick="setLang('ko', this)">KO</button><button class="lang-btn" onclick="setLang('fr', this)">FR</button><button class="lang-btn" onclick="setLang('es', this)">ES</button></nav>
+<div class="top"><a class="back" href="../">←</a><h1><span aria-hidden="true">🛠️</span> <span data-title>Equipment</span></h1></div>
+<article class="content"><div data-content></div>
+<figure><img src="../images/.png" alt=".png" loading="lazy"></figure>
+<figure><img src="../images/名称未設定のデザイン_(17).png" alt="名称未設定のデザイン (17).png" loading="lazy"></figure>
+<figure><img src="../images/.jpg" alt=".jpg" loading="lazy"></figure>
+<figure><img src="../images/.jpg" alt=".jpg" loading="lazy"></figure>
+<figure><img src="../images/_(1).png" alt=" (1).png" loading="lazy"></figure>
+<figure><img src="../images/_(4).png" alt=" (4).png" loading="lazy"></figure></article>
 </main>
+<script>
+const STRINGS={"en":{"title":"Equipment","html":"\u003ch3>TV Remote\u003c/h3>\u003cp>1. On/Off\u003c/p>\u003cp>2. Volume\u003c/p>\u003cp>3. Channel\u003c/p>\u003cp>4. Input switching\u003c/p>\u003ch3>Air Conditioner Remote\u003c/h3>\u003cp>Heating, cooling, dry mode, temperature, and stop buttons are shown below.\u003c/p>\u003cp>Use On/Off, mode change, and temperature buttons as needed.\u003c/p>\u003ch3>Washlet (Bidet)\u003c/h3>\u003cp>Use Off, shower toilet, and flush buttons as shown.\u003c/p>\u003ch3>Intercom\u003c/h3>\u003cp>Use Call and Off buttons as shown.\u003c/p>"},"ja":{"title":"設備について","html":"\u003ch3>テレビリモコン\u003c/h3>\u003cp>1. 電源\u003c/p>\u003cp>2. 音量\u003c/p>\u003cp>3. チャンネル\u003c/p>\u003cp>4. 入力切替\u003c/p>\u003ch3>エアコンのリモコン\u003c/h3>\u003cp>暖房、冷房、除湿、温度、停止ボタンは下の写真をご確認ください。\u003c/p>\u003cp>電源、運転切替、温度ボタンを必要に応じてご利用ください。\u003c/p>\u003ch3>ウォシュレット\u003c/h3>\u003cp>停止、洗浄、流すボタンは写真をご確認ください。\u003c/p>\u003ch3>ドアホン\u003c/h3>\u003cp>呼出、切ボタンは写真をご確認ください。\u003c/p>"},"zh":{"title":"设备说明","html":"\u003ch3>电视遥控器\u003c/h3>\u003cp>1. 开/关\u003c/p>\u003cp>2. 音量\u003c/p>\u003cp>3. 频道\u003c/p>\u003cp>4. 输入切换\u003c/p>\u003ch3>空调遥控器\u003c/h3>\u003cp>制热、制冷、除湿、温度和停止按钮如下所示。\u003c/p>\u003cp>请按需要使用开/关、模式切换和温度按钮。\u003c/p>\u003ch3>智能马桶\u003c/h3>\u003cp>停止、清洗和冲水按钮如下所示。\u003c/p>\u003ch3>对讲机\u003c/h3>\u003cp>呼叫和关闭按钮如下所示。\u003c/p>"},"ko":{"title":"설비 안내","html":"\u003ch3>TV 리모컨\u003c/h3>\u003cp>1. 전원\u003c/p>\u003cp>2. 음량\u003c/p>\u003cp>3. 채널\u003c/p>\u003cp>4. 입력 전환\u003c/p>\u003ch3>에어컨 리모컨\u003c/h3>\u003cp>난방, 냉방, 제습, 온도, 정지 버튼은 아래 사진을 확인해 주세요.\u003c/p>\u003cp>전원, 운전 모드 변경, 온도 버튼을 사용해 주세요.\u003c/p>\u003ch3>비데\u003c/h3>\u003cp>정지, 세정, 물내림 버튼은 사진을 확인해 주세요.\u003c/p>\u003ch3>인터폰\u003c/h3>\u003cp>호출 및 끄기 버튼은 사진을 확인해 주세요.\u003c/p>"},"fr":{"title":"Equipements","html":"\u003ch3>Telecommande TV\u003c/h3>\u003cp>1. Marche/arret\u003c/p>\u003cp>2. Volume\u003c/p>\u003cp>3. Chaine\u003c/p>\u003cp>4. Changement d'entree\u003c/p>\u003ch3>Telecommande de climatisation\u003c/h3>\u003cp>Les boutons chauffage, climatisation, deshumidification, temperature et arret sont indiques ci-dessous.\u003c/p>\u003cp>Utilisez marche/arret, changement de mode et temperature selon vos besoins.\u003c/p>\u003ch3>Washlet\u003c/h3>\u003cp>Les boutons arret, douchette et chasse d'eau sont indiques.\u003c/p>\u003ch3>Interphone\u003c/h3>\u003cp>Les boutons appel et arret sont indiques.\u003c/p>"},"es":{"title":"Equipamiento","html":"\u003ch3>Mando de TV\u003c/h3>\u003cp>1. Encendido/apagado\u003c/p>\u003cp>2. Volumen\u003c/p>\u003cp>3. Canal\u003c/p>\u003cp>4. Cambio de entrada\u003c/p>\u003ch3>Mando del aire acondicionado\u003c/h3>\u003cp>Los botones de calefaccion, frio, deshumidificacion, temperatura y parada se muestran abajo.\u003c/p>\u003cp>Use encendido/apagado, cambio de modo y temperatura segun sea necesario.\u003c/p>\u003ch3>Washlet\u003c/h3>\u003cp>Los botones de parada, lavado y descarga se muestran en la foto.\u003c/p>\u003ch3>Interfono\u003c/h3>\u003cp>Los botones de llamada y apagado se muestran en la foto.\u003c/p>"}};
+const LABELS={
+  en:{network:'Network',password:'Password',qr:'Scan with your camera to connect'},
+  ja:{network:'ネットワーク',password:'パスワード',qr:'カメラで読み取って接続できます'},
+  zh:{network:'网络',password:'密码',qr:'用相机扫描即可连接'},
+  ko:{network:'네트워크',password:'비밀번호',qr:'카메라로 스캔하여 연결하세요'},
+  fr:{network:'Reseau',password:'Mot de passe',qr:'Scannez avec votre appareil photo'},
+  es:{network:'Red',password:'Contrasena',qr:'Escanee con la camara'}
+};
+function setLang(lang, btn){
+  const t=STRINGS[lang]||STRINGS.en;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelector('[data-title]').textContent=t.title;
+  document.querySelector('[data-content]').innerHTML=t.html;
+  const labels=LABELS[lang]||LABELS.en;
+  document.querySelectorAll('[data-label]').forEach(el=>{ const k=el.getAttribute('data-label'); if(labels[k]) el.textContent=labels[k]; });
+  localStorage.setItem('sasazukaLang', lang);
+}
+function copyWifi(el,text){
+  navigator.clipboard?.writeText(text);
+  const action=el.querySelector('.wifi-row-action');
+  const old=action?.textContent||'⧉';
+  el.classList.add('copied');
+  if(action) action.textContent='✓';
+  setTimeout(()=>{el.classList.remove('copied'); if(action) action.textContent=old;},1100);
+}
+const saved=localStorage.getItem('sasazukaLang')||'en';
+const btn=document.querySelector(`.lang-btn[onclick*="'${saved}'"]`);
+setLang(saved, btn||document.querySelector('.lang-btn'));
+</script>
 </body>
 </html>
