@@ -3,25 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fdf6ee">
-<title>Circuit Breaker — Sasazuka 2Chome</title>
+<meta name="theme-color" content="#f7f9fc">
+<title>Circuit Breaker - Sasazuka 2Chome</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
+<style>.sub-lang-bar{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px 12px 12px}.sub-lang-bar .lang-btn.active{background:var(--teal-dark);color:#fff;border-color:var(--teal-dark)}.content a,.wifi-detail a{color:var(--teal-dark);font-weight:900}.content ul{font-weight:750}.content strong{color:var(--teal-dark)}</style>
 </head>
 <body>
 <main>
-<div class="top"><a class="back" href="../">←</a><h1>⚡ Circuit Breaker</h1></div>
-<article class="content">
-<h3>How to reset the circuit breaker</h3>
-<p>ブレーカーが落ちた場合</p>
-<figure><img src="../images/名称未設定のデザイン_(23).jpg" alt="Circuit breaker" loading="lazy"></figure>
-<figure><img src="../images/IMG_0258.heic" alt="Circuit breaker location" loading="lazy"></figure>
-<p>If the breaker trips, turn off any appliances that were in use and turn up all the switches.</p>
-<p>The circuit breaker is in the bathroom area.</p>
-<p>もしブレーカーが落ちた場合、脱衣所にあるブレーカーを全て上げてください。</p>
-</article>
+<nav class="sub-lang-bar" aria-label="Language"><button class="lang-btn active" onclick="setLang('en', this)">EN</button><button class="lang-btn" onclick="setLang('ja', this)">JA</button><button class="lang-btn" onclick="setLang('zh', this)">ZH</button><button class="lang-btn" onclick="setLang('ko', this)">KO</button><button class="lang-btn" onclick="setLang('fr', this)">FR</button><button class="lang-btn" onclick="setLang('es', this)">ES</button></nav>
+<div class="top"><a class="back" href="../">←</a><h1><span aria-hidden="true">⚡</span> <span data-title>Circuit Breaker</span></h1></div>
+<article class="content"><div data-content></div>
+<figure><img src="../images/名称未設定のデザイン_(23).jpg" alt="名称未設定のデザイン (23).jpg" loading="lazy"></figure>
+<figure><img src="../images/IMG_0258.heic" alt="IMG 0258.heic" loading="lazy"></figure></article>
 </main>
+<script>
+const STRINGS={"en":{"title":"Circuit Breaker","html":"\u003ch3>How to reset the circuit breaker\u003c/h3>\u003cp>If the breaker trips, turn off any appliances that were in use and turn up all the switches.\u003c/p>\u003cp>The circuit breaker is in the bathroom area.\u003c/p>"},"ja":{"title":"ブレーカー","html":"\u003ch3>ブレーカーが落ちた場合\u003c/h3>\u003cp>使用していた家電の電源を切り、すべてのスイッチを上げてください。\u003c/p>\u003cp>ブレーカーは脱衣所にあります。\u003c/p>"},"zh":{"title":"断路器","html":"\u003ch3>断路器跳闸时\u003c/h3>\u003cp>请关闭正在使用的电器，然后将所有开关拨回开启位置。\u003c/p>\u003cp>断路器位于浴室区域。\u003c/p>"},"ko":{"title":"차단기","html":"\u003ch3>차단기가 내려갔을 때\u003c/h3>\u003cp>사용 중이던 가전제품을 끄고 모든 스위치를 올려 주세요.\u003c/p>\u003cp>차단기는 욕실 쪽에 있습니다.\u003c/p>"},"fr":{"title":"Disjoncteur","html":"\u003ch3>Comment reenclencher le disjoncteur\u003c/h3>\u003cp>Si le disjoncteur saute, eteignez les appareils utilises puis relevez tous les interrupteurs.\u003c/p>\u003cp>Le disjoncteur se trouve pres de la salle de bain.\u003c/p>"},"es":{"title":"Interruptor electrico","html":"\u003ch3>Como restablecer el interruptor\u003c/h3>\u003cp>Si salta el interruptor, apague los electrodomesticos que estaban en uso y suba todos los interruptores.\u003c/p>\u003cp>El interruptor esta en la zona del bano.\u003c/p>"}};
+const LABELS={
+  en:{network:'Network',password:'Password',qr:'Scan with your camera to connect'},
+  ja:{network:'ネットワーク',password:'パスワード',qr:'カメラで読み取って接続できます'},
+  zh:{network:'网络',password:'密码',qr:'用相机扫描即可连接'},
+  ko:{network:'네트워크',password:'비밀번호',qr:'카메라로 스캔하여 연결하세요'},
+  fr:{network:'Reseau',password:'Mot de passe',qr:'Scannez avec votre appareil photo'},
+  es:{network:'Red',password:'Contrasena',qr:'Escanee con la camara'}
+};
+function setLang(lang, btn){
+  const t=STRINGS[lang]||STRINGS.en;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelector('[data-title]').textContent=t.title;
+  document.querySelector('[data-content]').innerHTML=t.html;
+  const labels=LABELS[lang]||LABELS.en;
+  document.querySelectorAll('[data-label]').forEach(el=>{ const k=el.getAttribute('data-label'); if(labels[k]) el.textContent=labels[k]; });
+  localStorage.setItem('sasazukaLang', lang);
+}
+function copyWifi(el,text){
+  navigator.clipboard?.writeText(text);
+  const action=el.querySelector('.wifi-row-action');
+  const old=action?.textContent||'⧉';
+  el.classList.add('copied');
+  if(action) action.textContent='✓';
+  setTimeout(()=>{el.classList.remove('copied'); if(action) action.textContent=old;},1100);
+}
+const saved=localStorage.getItem('sasazukaLang')||'en';
+const btn=document.querySelector(`.lang-btn[onclick*="'${saved}'"]`);
+setLang(saved, btn||document.querySelector('.lang-btn'));
+</script>
 </body>
 </html>
