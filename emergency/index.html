@@ -3,43 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fdf6ee">
-<title>Emergency — Sasazuka 2Chōme
-笹塚2丁目</title>
+<meta name="theme-color" content="#f7f9fc">
+<title>Emergency - Sasazuka 2Chome</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
+<style>.sub-lang-bar{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px 12px 12px}.sub-lang-bar .lang-btn.active{background:var(--teal-dark);color:#fff;border-color:var(--teal-dark)}.content a,.wifi-detail a{color:var(--teal-dark);font-weight:900}.content ul{font-weight:750}.content strong{color:var(--teal-dark)}</style>
 </head>
 <body>
 <main>
-<div class="top"><a class="back" href="../">←</a><h1>☎️ Emergency</h1></div><article class="content"><p>緊急時の連絡方法</p>
-<h3>EMERGENCY</h3>
-<h4>緊急時の連絡先</h4>
-<p>If you have any problems, please contact us</p>
-<p>by message on the reservation site.</p>
-<p>In case of emergency, please call bellow phone number.</p>
-<h4>050-5810-2161</h4>
-<p>お困りの際は、予約サイトのメッセージまでご連絡ください。</p>
-<p>緊急時は以下の電話番号にお電話ください。</p>
-<h4>050-5810-2161</h4>
-<h3>EMERGENCY Call</h3>
-<h4>事故や事件が発生した際のご連絡先</h4>
-<p>Police（警察）　110</p>
-<p>Fire（消防署） 119</p>
-<p>Rescue（救急車） 119</p>
-<p>Multi Language Hospital Search</p>
-<p>https://www.jnto.go.jp/emergency/eng/mi_guide.html</p>
-<h3>EVACUATION SITE</h3>
-<h4>避難場所</h4>
-<p>In case of any danger, please proceed to the designated evacuation site for safety.</p>
-<p>Sasazuka Junior High School</p>
-<p>3 Chome-10-1 Sasazuka, Shibuya, Tokyo 151-0073</p>
-<p>地震や台風などによって、水害や土砂災害などの災害が発生するおそれがあるときは指定された避難場所へ安全に避難して下さい。</p>
-<p>笹塚中学校</p>
-<p>151-0073 東京都渋谷区笹塚3丁目10番1号</p>
+<nav class="sub-lang-bar" aria-label="Language"><button class="lang-btn active" onclick="setLang('en', this)">EN</button><button class="lang-btn" onclick="setLang('ja', this)">JA</button><button class="lang-btn" onclick="setLang('zh', this)">ZH</button><button class="lang-btn" onclick="setLang('ko', this)">KO</button><button class="lang-btn" onclick="setLang('fr', this)">FR</button><button class="lang-btn" onclick="setLang('es', this)">ES</button></nav>
+<div class="top"><a class="back" href="../">←</a><h1><span aria-hidden="true">☎️</span> <span data-title>Emergency</span></h1></div>
+<article class="content"><div data-content></div>
 <figure><img src="../images/スクリーンショット_2025-01-09_15.27.17.png" alt="スクリーンショット 2025-01-09 15.27.17.png" loading="lazy"></figure></article>
-
 </main>
+<script>
+const STRINGS={"en":{"title":"Emergency","html":"\u003ch3>Emergency Contact\u003c/h3>\u003cp>If you have any problems, please contact us by message on the reservation site.\u003c/p>\u003cp>In an emergency, please call: \u003cstrong>050-5810-2161\u003c/strong>\u003c/p>\u003ch3>Emergency Calls\u003c/h3>\u003cp>Police: 110\u003c/p>\u003cp>Fire: 119\u003c/p>\u003cp>Ambulance: 119\u003c/p>\u003cp>\u003ca href=\"https://www.jnto.go.jp/emergency/eng/mi_guide.html\">Multilingual hospital search\u003c/a>\u003c/p>\u003ch3>Evacuation Site\u003c/h3>\u003cp>In case of danger, please proceed to the designated evacuation site.\u003c/p>\u003cp>Sasazuka Junior High School, 3 Chome-10-1 Sasazuka, Shibuya, Tokyo 151-0073\u003c/p>"},"ja":{"title":"緊急時の連絡方法","html":"\u003ch3>緊急時の連絡先\u003c/h3>\u003cp>お困りの際は、予約サイトのメッセージまでご連絡ください。\u003c/p>\u003cp>緊急時は以下にお電話ください: \u003cstrong>050-5810-2161\u003c/strong>\u003c/p>\u003ch3>事故や事件が発生した際\u003c/h3>\u003cp>警察: 110\u003c/p>\u003cp>消防署: 119\u003c/p>\u003cp>救急車: 119\u003c/p>\u003cp>\u003ca href=\"https://www.jnto.go.jp/emergency/eng/mi_guide.html\">多言語対応病院検索\u003c/a>\u003c/p>\u003ch3>避難場所\u003c/h3>\u003cp>地震や台風などで危険がある場合は、指定された避難場所へ避難してください。\u003c/p>\u003cp>笹塚中学校 〒151-0073 東京都渋谷区笹塚3丁目10番1号\u003c/p>"},"zh":{"title":"紧急联系方式","html":"\u003ch3>紧急联系\u003c/h3>\u003cp>如有问题，请通过预订网站消息联系我们。\u003c/p>\u003cp>紧急情况下请拨打: \u003cstrong>050-5810-2161\u003c/strong>\u003c/p>\u003ch3>紧急电话\u003c/h3>\u003cp>警察: 110\u003c/p>\u003cp>消防: 119\u003c/p>\u003cp>救护车: 119\u003c/p>\u003cp>\u003ca href=\"https://www.jnto.go.jp/emergency/eng/mi_guide.html\">多语言医院查询\u003c/a>\u003c/p>\u003ch3>避难地点\u003c/h3>\u003cp>如遇危险，请前往指定避难地点。\u003c/p>\u003cp>笹塚中学校，东京都涩谷区笹塚3丁目10番1号 〒151-0073\u003c/p>"},"ko":{"title":"긴급 연락","html":"\u003ch3>긴급 연락처\u003c/h3>\u003cp>문제가 있으면 예약 사이트 메시지로 연락해 주세요.\u003c/p>\u003cp>긴급 시 전화: \u003cstrong>050-5810-2161\u003c/strong>\u003c/p>\u003ch3>긴급 전화\u003c/h3>\u003cp>경찰: 110\u003c/p>\u003cp>소방: 119\u003c/p>\u003cp>구급차: 119\u003c/p>\u003cp>\u003ca href=\"https://www.jnto.go.jp/emergency/eng/mi_guide.html\">다국어 병원 검색\u003c/a>\u003c/p>\u003ch3>대피 장소\u003c/h3>\u003cp>위험한 상황에서는 지정 대피소로 이동해 주세요.\u003c/p>\u003cp>사사즈카 중학교, 도쿄도 시부야구 사사즈카 3-10-1 〒151-0073\u003c/p>"},"fr":{"title":"Urgence","html":"\u003ch3>Contact d'urgence\u003c/h3>\u003cp>En cas de probleme, contactez-nous via la messagerie du site de reservation.\u003c/p>\u003cp>En urgence, appelez: \u003cstrong>050-5810-2161\u003c/strong>\u003c/p>\u003ch3>Numeros d'urgence\u003c/h3>\u003cp>Police: 110\u003c/p>\u003cp>Pompiers: 119\u003c/p>\u003cp>Ambulance: 119\u003c/p>\u003cp>\u003ca href=\"https://www.jnto.go.jp/emergency/eng/mi_guide.html\">Recherche d'hopitaux multilingue\u003c/a>\u003c/p>\u003ch3>Lieu d'evacuation\u003c/h3>\u003cp>En cas de danger, rendez-vous au lieu d'evacuation designe.\u003c/p>\u003cp>Sasazuka Junior High School, 3 Chome-10-1 Sasazuka, Shibuya, Tokyo 151-0073\u003c/p>"},"es":{"title":"Emergencia","html":"\u003ch3>Contacto de emergencia\u003c/h3>\u003cp>Si tiene algun problema, contactenos por mensaje en el sitio de reserva.\u003c/p>\u003cp>En caso de emergencia, llame a: \u003cstrong>050-5810-2161\u003c/strong>\u003c/p>\u003ch3>Numeros de emergencia\u003c/h3>\u003cp>Policia: 110\u003c/p>\u003cp>Bomberos: 119\u003c/p>\u003cp>Ambulancia: 119\u003c/p>\u003cp>\u003ca href=\"https://www.jnto.go.jp/emergency/eng/mi_guide.html\">Busqueda multilingue de hospitales\u003c/a>\u003c/p>\u003ch3>Sitio de evacuacion\u003c/h3>\u003cp>En caso de peligro, dirijase al sitio de evacuacion designado.\u003c/p>\u003cp>Sasazuka Junior High School, 3 Chome-10-1 Sasazuka, Shibuya, Tokyo 151-0073\u003c/p>"}};
+const LABELS={
+  en:{network:'Network',password:'Password',qr:'Scan with your camera to connect'},
+  ja:{network:'ネットワーク',password:'パスワード',qr:'カメラで読み取って接続できます'},
+  zh:{network:'网络',password:'密码',qr:'用相机扫描即可连接'},
+  ko:{network:'네트워크',password:'비밀번호',qr:'카메라로 스캔하여 연결하세요'},
+  fr:{network:'Reseau',password:'Mot de passe',qr:'Scannez avec votre appareil photo'},
+  es:{network:'Red',password:'Contrasena',qr:'Escanee con la camara'}
+};
+function setLang(lang, btn){
+  const t=STRINGS[lang]||STRINGS.en;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelector('[data-title]').textContent=t.title;
+  document.querySelector('[data-content]').innerHTML=t.html;
+  const labels=LABELS[lang]||LABELS.en;
+  document.querySelectorAll('[data-label]').forEach(el=>{ const k=el.getAttribute('data-label'); if(labels[k]) el.textContent=labels[k]; });
+  localStorage.setItem('sasazukaLang', lang);
+}
+function copyWifi(el,text){
+  navigator.clipboard?.writeText(text);
+  const action=el.querySelector('.wifi-row-action');
+  const old=action?.textContent||'⧉';
+  el.classList.add('copied');
+  if(action) action.textContent='✓';
+  setTimeout(()=>{el.classList.remove('copied'); if(action) action.textContent=old;},1100);
+}
+const saved=localStorage.getItem('sasazukaLang')||'en';
+const btn=document.querySelector(`.lang-btn[onclick*="'${saved}'"]`);
+setLang(saved, btn||document.querySelector('.lang-btn'));
+</script>
 </body>
 </html>
