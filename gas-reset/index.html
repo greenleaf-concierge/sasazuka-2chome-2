@@ -3,26 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fdf6ee">
-<title>Gas Reset — Sasazuka 2Chome</title>
+<meta name="theme-color" content="#f7f9fc">
+<title>Gas Reset - Sasazuka 2Chome</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
+<style>.sub-lang-bar{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px 12px 12px}.sub-lang-bar .lang-btn.active{background:var(--teal-dark);color:#fff;border-color:var(--teal-dark)}.content a,.wifi-detail a{color:var(--teal-dark);font-weight:900}.content ul{font-weight:750}.content strong{color:var(--teal-dark)}</style>
 </head>
 <body>
 <main>
-<div class="top"><a class="back" href="../">←</a><h1>🔥 Gas Reset</h1></div>
-<article class="content">
-<h3>Gas Supply</h3>
-<p>ガスが止まった場合</p>
-<figure><img src="../images/名称未設定のデザイン_(21).jpg" alt="Gas meter" loading="lazy"></figure>
-<figure><img src="../images/名称未設定のデザイン_(22).jpg" alt="Gas reset button" loading="lazy"></figure>
-<p>If hot water stops throughout the house, please reset the gas meter outside.</p>
-<p>Please press and hold the reset button.</p>
-<p>給湯器がONになっているのにお湯が出ない場合は、玄関向かって右側にあるガスメーターの復帰ボタンを長押ししてください。</p>
-<p><a href="https://youtu.be/0YSmTuE4r2E?feature=shared">Video guide</a></p>
-</article>
+<nav class="sub-lang-bar" aria-label="Language"><button class="lang-btn active" onclick="setLang('en', this)">EN</button><button class="lang-btn" onclick="setLang('ja', this)">JA</button><button class="lang-btn" onclick="setLang('zh', this)">ZH</button><button class="lang-btn" onclick="setLang('ko', this)">KO</button><button class="lang-btn" onclick="setLang('fr', this)">FR</button><button class="lang-btn" onclick="setLang('es', this)">ES</button></nav>
+<div class="top"><a class="back" href="../">←</a><h1><span aria-hidden="true">🔥</span> <span data-title>Gas Reset</span></h1></div>
+<article class="content"><div data-content></div>
+<figure><img src="../images/名称未設定のデザイン_(21).jpg" alt="名称未設定のデザイン (21).jpg" loading="lazy"></figure>
+<figure><img src="../images/名称未設定のデザイン_(22).jpg" alt="名称未設定のデザイン (22).jpg" loading="lazy"></figure></article>
 </main>
+<script>
+const STRINGS={"en":{"title":"Gas Reset","html":"\u003ch3>Gas Supply\u003c/h3>\u003cp>If hot water stops throughout the house, please reset the gas meter outside.\u003c/p>\u003cp>Press and hold the reset button.\u003c/p>\u003cp>\u003ca href=\"https://youtu.be/0YSmTuE4r2E?feature=shared\">Video guide\u003c/a>\u003c/p>"},"ja":{"title":"ガスメーター復帰","html":"\u003ch3>ガスが止まった場合\u003c/h3>\u003cp>給湯器がONなのに家全体でお湯が出ない場合は、外のガスメーターを復帰してください。\u003c/p>\u003cp>復帰ボタンを長押ししてください。\u003c/p>\u003cp>\u003ca href=\"https://youtu.be/0YSmTuE4r2E?feature=shared\">動画ガイド\u003c/a>\u003c/p>"},"zh":{"title":"燃气复位","html":"\u003ch3>燃气供应\u003c/h3>\u003cp>如果全屋热水停止，请复位室外燃气表。\u003c/p>\u003cp>请长按复位按钮。\u003c/p>\u003cp>\u003ca href=\"https://youtu.be/0YSmTuE4r2E?feature=shared\">视频指南\u003c/a>\u003c/p>"},"ko":{"title":"가스 복구","html":"\u003ch3>가스 공급\u003c/h3>\u003cp>집 전체에서 온수가 나오지 않으면 외부 가스 계량기를 복구해 주세요.\u003c/p>\u003cp>복구 버튼을 길게 눌러 주세요.\u003c/p>\u003cp>\u003ca href=\"https://youtu.be/0YSmTuE4r2E?feature=shared\">동영상 안내\u003c/a>\u003c/p>"},"fr":{"title":"Reinitialisation du gaz","html":"\u003ch3>Alimentation en gaz\u003c/h3>\u003cp>Si l'eau chaude ne fonctionne plus dans tout le logement, reinitialisez le compteur de gaz a l'exterieur.\u003c/p>\u003cp>Maintenez le bouton de reinitialisation enfonce.\u003c/p>\u003cp>\u003ca href=\"https://youtu.be/0YSmTuE4r2E?feature=shared\">Guide video\u003c/a>\u003c/p>"},"es":{"title":"Reinicio del gas","html":"\u003ch3>Suministro de gas\u003c/h3>\u003cp>Si no hay agua caliente en toda la casa, reinicie el medidor de gas exterior.\u003c/p>\u003cp>Mantenga presionado el boton de reinicio.\u003c/p>\u003cp>\u003ca href=\"https://youtu.be/0YSmTuE4r2E?feature=shared\">Guia en video\u003c/a>\u003c/p>"}};
+const LABELS={
+  en:{network:'Network',password:'Password',qr:'Scan with your camera to connect'},
+  ja:{network:'ネットワーク',password:'パスワード',qr:'カメラで読み取って接続できます'},
+  zh:{network:'网络',password:'密码',qr:'用相机扫描即可连接'},
+  ko:{network:'네트워크',password:'비밀번호',qr:'카메라로 스캔하여 연결하세요'},
+  fr:{network:'Reseau',password:'Mot de passe',qr:'Scannez avec votre appareil photo'},
+  es:{network:'Red',password:'Contrasena',qr:'Escanee con la camara'}
+};
+function setLang(lang, btn){
+  const t=STRINGS[lang]||STRINGS.en;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelector('[data-title]').textContent=t.title;
+  document.querySelector('[data-content]').innerHTML=t.html;
+  const labels=LABELS[lang]||LABELS.en;
+  document.querySelectorAll('[data-label]').forEach(el=>{ const k=el.getAttribute('data-label'); if(labels[k]) el.textContent=labels[k]; });
+  localStorage.setItem('sasazukaLang', lang);
+}
+function copyWifi(el,text){
+  navigator.clipboard?.writeText(text);
+  const action=el.querySelector('.wifi-row-action');
+  const old=action?.textContent||'⧉';
+  el.classList.add('copied');
+  if(action) action.textContent='✓';
+  setTimeout(()=>{el.classList.remove('copied'); if(action) action.textContent=old;},1100);
+}
+const saved=localStorage.getItem('sasazukaLang')||'en';
+const btn=document.querySelector(`.lang-btn[onclick*="'${saved}'"]`);
+setLang(saved, btn||document.querySelector('.lang-btn'));
+</script>
 </body>
 </html>
