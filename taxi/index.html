@@ -3,54 +3,401 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fdf6ee">
-<title>For Taxi — Sasazuka 2Chōme
-笹塚2丁目</title>
+<meta name="theme-color" content="#f7f9fc">
+<title>For Taxi - Sasazuka 2Chome</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
+<style>
+  :root {
+    --taxi-accent: #2f6f9f;
+    --taxi-accent-dark: #173a5c;
+    --taxi-accent-light: #c7dced;
+    --taxi-accent-soft: #eaf3fa;
+  }
+  body { background: var(--cream); }
+  .taxi-top {
+    background: linear-gradient(135deg, var(--taxi-accent) 0%, var(--taxi-accent-dark) 100%);
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 12px rgba(0,0,0,.15);
+  }
+  .taxi-back {
+    background: rgba(255,255,255,.22);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .taxi-emoji { font-size: 1.78rem; }
+  .taxi-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.36rem;
+    color: #fff;
+    text-shadow: 1px 2px 4px rgba(0,0,0,.22);
+    line-height: 1.2;
+  }
+  .taxi-lang-bar {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 14px 12px;
+    flex-wrap: wrap;
+  }
+  .taxi-lang-bar .lang-btn.active {
+    background: var(--taxi-accent-dark);
+    border-color: var(--taxi-accent-dark);
+    color: #fff;
+  }
+  .taxi-content {
+    padding: 8px 16px 40px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .note-box {
+    background: #fff;
+    border-left: 5px solid var(--taxi-accent);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow-sm);
+    color: var(--muted);
+    font-size: .93rem;
+    font-weight: 800;
+    line-height: 1.65;
+  }
+  .note-box strong {
+    display: block;
+    color: var(--taxi-accent-dark);
+    margin-bottom: 4px;
+    font-size: .96rem;
+  }
+  .driver-card {
+    background: #fff;
+    border: 3px solid var(--taxi-accent);
+    border-radius: 18px;
+    padding: 20px 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 5px 22px rgba(31,79,122,.15);
+  }
+  .driver-label {
+    color: var(--taxi-accent);
+    font-size: .86rem;
+    font-weight: 900;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .arrow-down {
+    display: block;
+    margin: 2px 0 10px;
+    font-size: 1.9rem;
+  }
+  .destination {
+    color: var(--text);
+    font-size: 1.13rem;
+    font-weight: 900;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .address-label {
+    color: var(--muted);
+    display: block;
+    font-size: .78rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    background: var(--taxi-accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-size: .86rem;
+    font-weight: 900;
+  }
+  .section-heading {
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: var(--taxi-accent-dark);
+    margin: 24px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .photo-card, .app-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow-sm);
+  }
+  .photo-card p {
+    color: var(--muted);
+    font-size: .9rem;
+    font-weight: 800;
+    margin: 0 0 10px;
+  }
+  .photo-card figure { margin: 10px 0 0; }
+  .app-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .app-tag {
+    display: inline-block;
+    background: var(--taxi-accent-soft);
+    color: var(--taxi-accent-dark);
+    border-radius: 999px;
+    padding: 2px 8px;
+    font-size: .72rem;
+    font-weight: 900;
+  }
+  .app-body {
+    color: var(--muted);
+    font-size: .88rem;
+    font-weight: 750;
+    line-height: 1.6;
+  }
+  .back-footer {
+    text-align: center;
+    margin-top: 26px;
+  }
+  .back-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--taxi-accent-dark);
+    font-weight: 900;
+    text-decoration: none;
+    background: var(--taxi-accent-soft);
+    border: 1px solid rgba(31,79,122,.13);
+    padding: 12px 24px;
+    border-radius: 999px;
+  }
+</style>
 </head>
 <body>
 <main>
-<div class="top"><a class="back" href="../">←</a><h1>🚕 For Taxi</h1></div><article class="content"><p>タクシーをご利用の場合</p>
-<p>Note: Every Japanese Taxi drivers in Japan do not speak English.To ensure a smooth ride, I’ve prepared a sample message for you to show to Taxi driver when getting into the taxi.</p>
-<p>日本的所有日本出租车司机都不会说英语。为了确保顺利乘坐，我准备了一条示例消息，供您在上出租车时向出租车司机出示</p>
-<h4>Please show a driver this page, when you go to the Accommodation.</h4>
-<p>当您前往住宿时，请向司机出示此页。</p>
-<p>以下をタクシー運転手の方にお見せください。</p>
-<p>↓↓↓</p>
-<h4>目的地: 〒151-0073 東京都渋谷区笹塚2-37-7</h4>
-<p>&gt; [!NOTE]</p>
-<p>&gt; NOTE:Google Maps does not show the correct location.</p>
-<p>&gt; Please refer to the locations marked with red circles below.</p>
-<p>&gt;</p>
-<p>&gt; ご注意:Googleマップでは正しい位置が表示されません。</p>
-<p>&gt; 以下の赤マルの場所を参考にして下さい。</p>
-<p>&gt;</p>
-<p>&gt; ![Our (2).jpg](images/Our_(2).jpg)</p>
-<p>&gt;</p>
-<h4>建物外観はこちら</h4>
-<figure><img src="../images/名称未設定のデザイン_(18)_(1).jpg" alt="名称未設定のデザイン (18) (1).jpg" loading="lazy"></figure>
-<p>Let’s explore some of the transportation options available in Japan:</p>
-<p>让我们探讨一下日本的一些交通方式：</p>
-<p>{Go タクシー}</p>
-<figure><img src="../images/Gotaxi.png" alt="Gotaxi.png" loading="lazy"></figure>
-<p>Coverage: Go Taxi operates across all 44 prefectures in Japan (as of August 2023) and serves a wide range of areas.</p>
-<p>Features: You can easily reserve and book a taxi by specifying your pick-up and drop-off locations directly on the map. Registration is straightforward, requiring basic personal information such as your name and email address. For online payments, you can also add your credit card details. Additionally, Go Taxi allows for online pre-payment during your ride, and you can even request receipts through the app.</p>
-<p>Language Support: Note that Go Taxi’s app interface is available in Japanese only, so a translation app may be necessary.</p>
-<p>覆盖范围：Go Taxi 的业务遍及日本所有 44 个都道府县（截至 2023 年 8 月），服务范围广泛。</p>
-<p>特点：您可以直接在地图上指定上车和下车地点，轻松预订出租车。 注册很简单，需要基本的个人信息，例如您的姓名和电子邮件地址。 对于在线付款，您还可以添加信用卡详细信息。 此外，Go Taxi 允许您在乘车期间在线预付款，您甚至可以通过该应用程序索取收据。</p>
-<p>语言支持：请注意，Go Taxi 的应用程序界面仅提供日语版本，因此可能需要翻译应用程序。</p>
-<p>{NearMe Airport}</p>
-<figure><img src="../images/unnamed.png" alt="unnamed.png" loading="lazy"></figure>
-<p>Description: NearMe Airport combines the convenience of taxis with the flexibility of buses. You can book shared rides from specified locations to major airports without waiting for fixed schedules or designated stops. Plus, you can share the ride and split costs with fellow passengers. Even if you use highways, there are no additional charges. The ability to cancel for free up to 48 hours before departure is another advantage.Language Support: NearMe Airport provides English support, but online payments are accepted via credit cards only.</p>
-<p>{靠近我的机场}描述：NearMe Airport 结合了出租车的便利性和巴士的灵活性。 您可以预订从指定地点到主要机场的拼车服务，无需等待固定的时间表或指定的站点。 此外，您还可以与其他乘客共乘并分摊费用。 即使您使用高速公路，也无需支付额外费用。 另一个优势是可以在出发前 48 小时内免费取消。语言支持：NearMe Airport 提供英语支持，但仅接受通过信用卡进行在线支付。</p>
-<p>{Uber}</p>
-<figure><img src="../images/Uber_edited.jpg" alt="Uber_edited.jpg" loading="lazy"></figure>
-<p>Overview: Uber is a taxi dispatch service available in over 700 cities worldwide. In Japan, Uber collaborates exclusively with existing taxi companies due to legal restrictions.Coverage: Uber operates in cities like Tokyo, Yokohama, Sendai, Nagoya, Osaka, Kyoto, and Fukuoka. For specific details, visit their website.How It Works: After downloading the app, create an account and register your email or phone number. If you plan to use online payments, add your credit card information. When you need a ride, input your destination and pick-up location. The app will match you with nearby taxis, and you can track their location on the map while waiting.</p>
-<p>{优步}概述：Uber 是一项出租车调度服务，覆盖全球 700 多个城市。 在日本，由于法律限制，优步仅与现有出租车公司合作。覆盖范围：优步在东京、横滨、仙台、名古屋、大阪、京都和福冈等城市运营。 有关具体详情，请访问他们的网站。工作原理：下载应用程序后，创建一个帐户并注册您的电子邮件或电话号码。 如果您打算使用在线付款，请添加您的信用卡信息。 当您需要乘车时，输入您的目的地和上车地点。 该应用程序将为您匹配附近的出租车，您可以在等待时在地图上跟踪他们的位置。</p></article>
+  <div class="taxi-lang-bar">
+    <button class="lang-btn active" onclick="setLang('en', this)">EN</button>
+    <button class="lang-btn" onclick="setLang('ja', this)">JA</button>
+    <button class="lang-btn" onclick="setLang('zh', this)">ZH</button>
+    <button class="lang-btn" onclick="setLang('ko', this)">KO</button>
+    <button class="lang-btn" onclick="setLang('fr', this)">FR</button>
+    <button class="lang-btn" onclick="setLang('es', this)">ES</button>
+  </div>
 
+  <div class="taxi-top">
+    <a href="../" class="taxi-back">←</a>
+    <span class="taxi-emoji">🚕</span>
+    <div class="taxi-title" data-i18n="pageTitle">For Taxi</div>
+  </div>
+
+  <div class="taxi-content">
+    <div class="note-box">
+      <strong data-i18n="noteTitle">Note</strong>
+      <span data-i18n="noteBody">Japanese taxi drivers usually do not speak English. Please show the card below to your driver when getting in the taxi.</span>
+    </div>
+
+    <div class="driver-card">
+      <div class="driver-label" data-i18n="driverLabel">Please show this to your driver</div>
+      <span class="arrow-down">↓↓↓</span>
+      <div class="destination">
+        <span class="address-label" data-i18n="destinationLabel">Destination</span>
+        〒151-0073<br>
+        東京都渋谷区笹塚2-37-7
+      </div>
+      <a class="map-link" href="https://maps.google.com/?q=東京都渋谷区笹塚2-37-7" target="_blank" rel="noopener">Google Maps</a>
+    </div>
+
+    <div class="section-heading" data-i18n="locationTitle">Location Note</div>
+    <div class="photo-card">
+      <p data-i18n="locationNote">Google Maps may not show the exact entrance. Please refer to the location marked below.</p>
+      <figure><img src="../images/Our_(2).jpg" alt="Sasazuka location reference" loading="lazy"></figure>
+    </div>
+
+    <div class="section-heading" data-i18n="buildingTitle">Building Exterior</div>
+    <div class="photo-card">
+      <p data-i18n="buildingNote">Please use this photo to identify the building when you arrive.</p>
+      <figure><img src="../images/名称未設定のデザイン_(18)_(1).jpg" alt="Sasazuka building exterior" loading="lazy"></figure>
+    </div>
+
+    <div class="section-heading" data-i18n="appsTitle">Taxi Apps in Japan</div>
+
+    <div class="app-card">
+      <div class="app-name">GO Taxi <span class="app-tag" data-i18n="jaOnly">JA only</span></div>
+      <div class="app-body" data-i18n="goBody">Available across Japan. You can book by specifying pick-up and drop-off on the map. Credit card pre-payment and in-app receipts are supported. The app interface is in Japanese only, so a translation app may help.</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-name">NearMe Airport <span class="app-tag" data-i18n="enSupport">EN support</span></div>
+      <div class="app-body" data-i18n="nearmeBody">Shared rides from your location to major airports. You can split costs with other passengers. Free cancellation is available up to 48 hours before departure. Credit card payment only.</div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-name">Uber <span class="app-tag" data-i18n="enSupport2">EN support</span></div>
+      <div class="app-body" data-i18n="uberBody">Available in Tokyo and other major cities. Download the app, register your account and payment method, then enter your destination. The app matches you with nearby taxis.</div>
+    </div>
+
+    <div class="back-footer">
+      <a href="../" data-i18n="backToMenu">Back to Menu</a>
+    </div>
+  </div>
 </main>
+
+<script>
+const STRINGS = {
+  en: {
+    pageTitle: 'For Taxi',
+    noteTitle: 'Note',
+    noteBody: 'Japanese taxi drivers usually do not speak English. Please show the card below to your driver when getting in the taxi.',
+    driverLabel: 'Please show this to your driver',
+    destinationLabel: 'Destination',
+    locationTitle: 'Location Note',
+    locationNote: 'Google Maps may not show the exact entrance. Please refer to the location marked below.',
+    buildingTitle: 'Building Exterior',
+    buildingNote: 'Please use this photo to identify the building when you arrive.',
+    appsTitle: 'Taxi Apps in Japan',
+    goBody: 'Available across Japan. You can book by specifying pick-up and drop-off on the map. Credit card pre-payment and in-app receipts are supported. The app interface is in Japanese only, so a translation app may help.',
+    nearmeBody: 'Shared rides from your location to major airports. You can split costs with other passengers. Free cancellation is available up to 48 hours before departure. Credit card payment only.',
+    uberBody: 'Available in Tokyo and other major cities. Download the app, register your account and payment method, then enter your destination. The app matches you with nearby taxis.',
+    jaOnly: 'JA only',
+    enSupport: 'EN support',
+    enSupport2: 'EN support',
+    backToMenu: 'Back to Menu'
+  },
+  ja: {
+    pageTitle: 'タクシー利用案内',
+    noteTitle: 'ご案内',
+    noteBody: '日本のタクシー運転手は英語を話せない場合があります。乗車時に以下のカードを運転手にお見せください。',
+    driverLabel: '以下を運転手の方にお見せください',
+    destinationLabel: '目的地',
+    locationTitle: '位置に関する注意',
+    locationNote: 'Google Mapsでは入口位置が正確に表示されない場合があります。下の画像の印を参考にしてください。',
+    buildingTitle: '建物外観',
+    buildingNote: '到着時はこの写真を目印にしてください。',
+    appsTitle: '日本のタクシーアプリ',
+    goBody: '日本各地で利用できます。地図上で乗車場所と降車場所を指定して予約できます。クレジットカード決済やアプリ内領収書に対応しています。アプリは日本語のみです。',
+    nearmeBody: '現在地から主要空港までの乗合サービスです。他の乗客と費用を分担できます。出発48時間前まで無料キャンセル可能です。支払いはクレジットカードのみです。',
+    uberBody: '東京など主要都市で利用できます。アプリをダウンロードし、アカウントと支払い方法を登録して目的地を入力すると、近くのタクシーとマッチングされます。',
+    jaOnly: '日本語のみ',
+    enSupport: '英語対応',
+    enSupport2: '英語対応',
+    backToMenu: 'メニューへ戻る'
+  },
+  zh: {
+    pageTitle: '出租车指南',
+    noteTitle: '提示',
+    noteBody: '日本出租车司机通常不会说英语。上车时请将下面的卡片出示给司机。',
+    driverLabel: '请将以下内容出示给司机',
+    destinationLabel: '目的地',
+    locationTitle: '位置提示',
+    locationNote: 'Google Maps 可能无法显示准确入口。请参考下方标记的位置。',
+    buildingTitle: '建筑外观',
+    buildingNote: '到达时请参考这张照片确认建筑。',
+    appsTitle: '日本打车应用',
+    goBody: '可在日本各地使用。您可以在地图上指定上车和下车地点进行预约。支持信用卡预付款和应用内收据。应用界面仅为日语，可能需要翻译软件。',
+    nearmeBody: '从当前位置到主要机场的拼车服务。可与其他乘客分摊费用。出发48小时前可免费取消。仅支持信用卡付款。',
+    uberBody: '可在东京等主要城市使用。下载应用并注册账户和付款方式，输入目的地后，应用会为您匹配附近的出租车。',
+    jaOnly: '仅日语',
+    enSupport: '支持英语',
+    enSupport2: '支持英语',
+    backToMenu: '返回菜单'
+  },
+  ko: {
+    pageTitle: '택시 안내',
+    noteTitle: '안내',
+    noteBody: '일본 택시 기사는 보통 영어를 하지 못합니다. 승차 시 아래 카드를 기사에게 보여주세요.',
+    driverLabel: '아래 내용을 기사님께 보여주세요',
+    destinationLabel: '목적지',
+    locationTitle: '위치 안내',
+    locationNote: 'Google Maps에 정확한 입구가 표시되지 않을 수 있습니다. 아래 표시된 위치를 참고해 주세요.',
+    buildingTitle: '건물 외관',
+    buildingNote: '도착 시 이 사진을 참고해 건물을 확인해 주세요.',
+    appsTitle: '일본 택시 앱',
+    goBody: '일본 각지에서 이용할 수 있습니다. 지도에서 승하차 위치를 지정해 예약할 수 있습니다. 신용카드 선결제와 앱 내 영수증을 지원합니다. 앱은 일본어 전용입니다.',
+    nearmeBody: '현재 위치에서 주요 공항까지 가는 합승 서비스입니다. 다른 승객과 비용을 나눌 수 있습니다. 출발 48시간 전까지 무료 취소가 가능합니다. 신용카드 결제만 가능합니다.',
+    uberBody: '도쿄 등 주요 도시에서 이용할 수 있습니다. 앱을 다운로드하고 계정과 결제 수단을 등록한 뒤 목적지를 입력하면 근처 택시와 연결됩니다.',
+    jaOnly: '일본어 전용',
+    enSupport: '영어 지원',
+    enSupport2: '영어 지원',
+    backToMenu: '메뉴로 돌아가기'
+  },
+  fr: {
+    pageTitle: 'Guide Taxi',
+    noteTitle: 'Note',
+    noteBody: 'Les chauffeurs de taxi japonais ne parlent généralement pas anglais. Veuillez montrer la carte ci-dessous au chauffeur en montant.',
+    driverLabel: 'Veuillez montrer ceci au chauffeur',
+    destinationLabel: 'Destination',
+    locationTitle: 'Note sur l’emplacement',
+    locationNote: 'Google Maps peut ne pas afficher l’entrée exacte. Veuillez vous référer à l’emplacement indiqué ci-dessous.',
+    buildingTitle: 'Extérieur du bâtiment',
+    buildingNote: 'Utilisez cette photo pour identifier le bâtiment à votre arrivée.',
+    appsTitle: 'Applications de taxi au Japon',
+    goBody: 'Disponible dans tout le Japon. Vous pouvez réserver en indiquant les points de prise en charge et de dépose sur la carte. Paiement par carte et reçus dans l’application disponibles. Interface en japonais uniquement.',
+    nearmeBody: 'Trajets partagés depuis votre emplacement vers les grands aéroports. Vous pouvez partager les frais avec d’autres passagers. Annulation gratuite jusqu’à 48 heures avant le départ. Paiement par carte uniquement.',
+    uberBody: 'Disponible à Tokyo et dans d’autres grandes villes. Téléchargez l’application, créez un compte et ajoutez un moyen de paiement, puis saisissez votre destination.',
+    jaOnly: 'JA uniquement',
+    enSupport: 'Support EN',
+    enSupport2: 'Support EN',
+    backToMenu: 'Retour au menu'
+  },
+  es: {
+    pageTitle: 'Guia de Taxi',
+    noteTitle: 'Nota',
+    noteBody: 'Los taxistas japoneses normalmente no hablan ingles. Muestre la tarjeta de abajo al conductor al subir al taxi.',
+    driverLabel: 'Muestre esto al conductor',
+    destinationLabel: 'Destino',
+    locationTitle: 'Nota de ubicacion',
+    locationNote: 'Google Maps puede no mostrar la entrada exacta. Consulte la ubicacion marcada abajo.',
+    buildingTitle: 'Exterior del edificio',
+    buildingNote: 'Use esta foto para identificar el edificio al llegar.',
+    appsTitle: 'Apps de taxi en Japon',
+    goBody: 'Disponible en Japon. Puede reservar indicando los puntos de recogida y destino en el mapa. Admite pago con tarjeta y recibos en la app. La interfaz esta solo en japones.',
+    nearmeBody: 'Viajes compartidos desde su ubicacion a los principales aeropuertos. Puede compartir el coste con otros pasajeros. Cancelacion gratuita hasta 48 horas antes. Solo pago con tarjeta.',
+    uberBody: 'Disponible en Tokio y otras ciudades principales. Descargue la app, registre su cuenta y metodo de pago, y luego ingrese su destino.',
+    jaOnly: 'Solo JA',
+    enSupport: 'Soporte EN',
+    enSupport2: 'Soporte EN',
+    backToMenu: 'Volver al menu'
+  }
+};
+
+function applyTranslations(lang) {
+  const t = STRINGS[lang];
+  if (!t) return;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (key in t) el.textContent = t[key];
+  });
+}
+function setLang(lang, btn) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyTranslations(lang);
+}
+applyTranslations('en');
+</script>
 </body>
 </html>
