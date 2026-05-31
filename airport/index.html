@@ -3,36 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fdf6ee">
-<title>From Haneda &amp; Narita Airport — Sasazuka 2Chōme
-笹塚2丁目</title>
+<meta name="theme-color" content="#f7f9fc">
+<title>From Haneda and Narita Airport - Sasazuka 2Chome</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
+<style>.sub-lang-bar{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px 12px 12px}.sub-lang-bar .lang-btn.active{background:var(--teal-dark);color:#fff;border-color:var(--teal-dark)}.content a,.wifi-detail a{color:var(--teal-dark);font-weight:900}.content ul{font-weight:750}.content strong{color:var(--teal-dark)}</style>
 </head>
 <body>
 <main>
-<div class="top"><a class="back" href="../">←</a><h1>✈️ From Haneda &amp; Narita Airport</h1></div><article class="content"><p>羽田空港＆成田空港からのご案内</p>
-<h3>【Haneda Airport】</h3>
-<p>The route with the shortest travel time is shown below.</p>
-<p>羽田空港からの最短の乗りかえは以下の通りです。</p>
+<nav class="sub-lang-bar" aria-label="Language"><button class="lang-btn active" onclick="setLang('en', this)">EN</button><button class="lang-btn" onclick="setLang('ja', this)">JA</button><button class="lang-btn" onclick="setLang('zh', this)">ZH</button><button class="lang-btn" onclick="setLang('ko', this)">KO</button><button class="lang-btn" onclick="setLang('fr', this)">FR</button><button class="lang-btn" onclick="setLang('es', this)">ES</button></nav>
+<div class="top"><a class="back" href="../">←</a><h1><span aria-hidden="true">✈️</span> <span data-title>From Haneda & Narita Airport</span></h1></div>
+<article class="content"><div data-content></div>
 <figure><img src="../images/スクリーンショット_2024-12-20_15.04.53.png" alt="スクリーンショット 2024-12-20 15.04.53.png" loading="lazy"></figure>
-<p>Other routes can be found at the following website.</p>
-<p>https://world.jorudan.co.jp/mln/en/?sub_lang=nosub</p>
-<h3>【Narita Airport】</h3>
-<p>The route with the shortest transit time is shown below.</p>
-<p>成田空港からの最短の乗りかえは以下の通りです。</p>
-<figure><img src="../images/笹塚.png" alt="笹塚.png" loading="lazy"></figure>
-<p>This is the transfer guide for passengers using Narita Airport Terminals 2 and 3.</p>
-<p>If you are using Terminal 1, the nearest station from the terminal is different, so please specify Terminal 1 from the link below and search again.</p>
-<p>And other routes can be found at the following website.</p>
-<p>https://world.jorudan.co.jp/mln/en/?sub_lang=nosub</p>
-<p>成田空港第2・第3ターミナルをご利用のお客様向けの乗換案内です。</p>
-<p>第1ターミナルをご利用の方は、ターミナルからの最寄り駅が異なりますので、下記リンクより第1ターミナルをご指定の上、再度検索してください。</p>
-<p>また、その他のルートは下記サイトにてご確認いただけます。</p>
-<p>https://www.jorudan.co.jp/</p></article>
-
+<figure><img src="../images/笹塚.png" alt="笹塚.png" loading="lazy"></figure></article>
 </main>
+<script>
+const STRINGS={"en":{"title":"From Haneda & Narita Airport","html":"\u003ch3>Haneda Airport\u003c/h3>\u003cp>The route with the shortest travel time is shown below.\u003c/p>\u003cp>Other routes can be found at \u003ca href=\"https://world.jorudan.co.jp/mln/en/?sub_lang=nosub\">Jorudan route search\u003c/a>.\u003c/p>\u003ch3>Narita Airport\u003c/h3>\u003cp>The route with the shortest transit time is shown below.\u003c/p>\u003cp>This guide is for Narita Airport Terminals 2 and 3. If you use Terminal 1, select Terminal 1 in the route search and search again.\u003c/p>"},"ja":{"title":"羽田空港・成田空港から","html":"\u003ch3>羽田空港\u003c/h3>\u003cp>羽田空港からの最短の乗りかえは以下の通りです。\u003c/p>\u003cp>その他のルートは\u003ca href=\"https://world.jorudan.co.jp/mln/en/?sub_lang=nosub\">乗換検索\u003c/a>でご確認ください。\u003c/p>\u003ch3>成田空港\u003c/h3>\u003cp>成田空港からの最短の乗りかえは以下の通りです。\u003c/p>\u003cp>成田空港第2・第3ターミナルをご利用のお客様向けの案内です。第1ターミナルをご利用の場合は、検索時に第1ターミナルを指定してください。\u003c/p>"},"zh":{"title":"从羽田・成田机场出发","html":"\u003ch3>羽田机场\u003c/h3>\u003cp>以下是所需时间较短的路线。\u003c/p>\u003cp>其他路线可在\u003ca href=\"https://world.jorudan.co.jp/mln/en/?sub_lang=nosub\">换乘查询\u003c/a>中查看。\u003c/p>\u003ch3>成田机场\u003c/h3>\u003cp>以下是换乘时间较短的路线。\u003c/p>\u003cp>本指南适用于成田机场第2・第3航站楼。如果使用第1航站楼，请在路线查询中选择第1航站楼后重新搜索。\u003c/p>"},"ko":{"title":"하네다・나리타 공항에서","html":"\u003ch3>하네다 공항\u003c/h3>\u003cp>소요 시간이 짧은 경로는 아래와 같습니다.\u003c/p>\u003cp>다른 경로는 \u003ca href=\"https://world.jorudan.co.jp/mln/en/?sub_lang=nosub\">환승 검색\u003c/a>에서 확인해 주세요.\u003c/p>\u003ch3>나리타 공항\u003c/h3>\u003cp>환승 시간이 짧은 경로는 아래와 같습니다.\u003c/p>\u003cp>이 안내는 나리타 공항 제2・제3터미널 기준입니다. 제1터미널 이용 시 검색에서 제1터미널을 선택해 다시 검색해 주세요.\u003c/p>"},"fr":{"title":"Depuis Haneda et Narita","html":"\u003ch3>Aeroport de Haneda\u003c/h3>\u003cp>L'itineraire le plus rapide est indique ci-dessous.\u003c/p>\u003cp>Vous pouvez rechercher d'autres itineraires sur \u003ca href=\"https://world.jorudan.co.jp/mln/en/?sub_lang=nosub\">Jorudan\u003c/a>.\u003c/p>\u003ch3>Aeroport de Narita\u003c/h3>\u003cp>L'itineraire avec le temps de correspondance le plus court est indique ci-dessous.\u003c/p>\u003cp>Ce guide concerne les terminaux 2 et 3. Pour le terminal 1, selectionnez Terminal 1 dans la recherche d'itineraire.\u003c/p>"},"es":{"title":"Desde Haneda y Narita","html":"\u003ch3>Aeropuerto de Haneda\u003c/h3>\u003cp>La ruta mas rapida se muestra abajo.\u003c/p>\u003cp>Puede buscar otras rutas en \u003ca href=\"https://world.jorudan.co.jp/mln/en/?sub_lang=nosub\">Jorudan\u003c/a>.\u003c/p>\u003ch3>Aeropuerto de Narita\u003c/h3>\u003cp>La ruta con menor tiempo de transbordo se muestra abajo.\u003c/p>\u003cp>Esta guia es para las terminales 2 y 3. Si usa la Terminal 1, seleccionela en la busqueda de ruta.\u003c/p>"}};
+const LABELS={
+  en:{network:'Network',password:'Password',qr:'Scan with your camera to connect'},
+  ja:{network:'ネットワーク',password:'パスワード',qr:'カメラで読み取って接続できます'},
+  zh:{network:'网络',password:'密码',qr:'用相机扫描即可连接'},
+  ko:{network:'네트워크',password:'비밀번호',qr:'카메라로 스캔하여 연결하세요'},
+  fr:{network:'Reseau',password:'Mot de passe',qr:'Scannez avec votre appareil photo'},
+  es:{network:'Red',password:'Contrasena',qr:'Escanee con la camara'}
+};
+function setLang(lang, btn){
+  const t=STRINGS[lang]||STRINGS.en;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelector('[data-title]').textContent=t.title;
+  document.querySelector('[data-content]').innerHTML=t.html;
+  const labels=LABELS[lang]||LABELS.en;
+  document.querySelectorAll('[data-label]').forEach(el=>{ const k=el.getAttribute('data-label'); if(labels[k]) el.textContent=labels[k]; });
+  localStorage.setItem('sasazukaLang', lang);
+}
+function copyWifi(el,text){
+  navigator.clipboard?.writeText(text);
+  const action=el.querySelector('.wifi-row-action');
+  const old=action?.textContent||'⧉';
+  el.classList.add('copied');
+  if(action) action.textContent='✓';
+  setTimeout(()=>{el.classList.remove('copied'); if(action) action.textContent=old;},1100);
+}
+const saved=localStorage.getItem('sasazukaLang')||'en';
+const btn=document.querySelector(`.lang-btn[onclick*="'${saved}'"]`);
+setLang(saved, btn||document.querySelector('.lang-btn'));
+</script>
 </body>
 </html>
