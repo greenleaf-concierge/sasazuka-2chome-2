@@ -12,7 +12,7 @@
 </head>
 <body>
 <main>
-<section class="hero"><div class="mark">🏠</div><h1>Sasazuka 2Chōme</h1><p>笹塚2丁目</p></section><section class="wifi"><strong>Wi-Fi</strong><code>ID: TP-Link_61E8<br>PASS: 45441745</code></section>
+<section class="hero"><div class="mark">🏠</div><h1>Sasazuka 2Chōme</h1><p>笹塚2丁目</p></section><section class="wifi-card" aria-labelledby="wifi-title"><div class="wifi-head"><span class="wifi-head-emoji" aria-hidden="true">📶</span><span class="wifi-head-label" id="wifi-title">Wi-Fi</span></div><div class="wifi-rows"><button class="wifi-row" onclick="copyWifi(this, 'TP-Link_61E8')" aria-label="Copy network name"><span class="wifi-row-label">Network</span><span class="wifi-row-val">TP-Link_61E8</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button><button class="wifi-row" onclick="copyWifi(this, '45441745')" aria-label="Copy password"><span class="wifi-row-label">Password</span><span class="wifi-row-val">45441745</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button></div><a class="wifi-qr-link" href="wifi/">Show QR code</a></section>
 <nav class="menu" aria-label="Guest menu"><div class="menu-group"><div class="menu-group-head"><span class="menu-group-title">Arriving</span><span class="menu-group-line"></span></div><div class="btn-grid"><a href="access/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🏠</span></span><span class="pl-en">Route to Accommodations</span><span class="pl-ja">宿泊施設へのご案内</span></a>
 <a href="airport/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">✈️</span></span><span class="pl-en">From Haneda &amp; Narita Airport</span><span class="pl-ja">羽田空港＆成田空港から</span></a>
 <a href="taxi/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🚕</span></span><span class="pl-en">For Taxi</span><span class="pl-ja">タクシーをご利用の場合</span></a>
@@ -23,5 +23,18 @@
 <a href="emergency/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">☎️</span></span><span class="pl-en">Emergency</span><span class="pl-ja">緊急時の連絡方法</span></a>
 <a href="transportation/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🚖</span></span><span class="pl-en">Transportation Services</span><span class="pl-ja">提携サービス</span></a></div></div></nav>
 </main>
+<script>
+function copyWifi(el, text) {
+  navigator.clipboard?.writeText(text);
+  const old = el.querySelector('.wifi-row-action')?.textContent || '⧉';
+  el.classList.add('copied');
+  const action = el.querySelector('.wifi-row-action');
+  if (action) action.textContent = '✓';
+  setTimeout(() => {
+    el.classList.remove('copied');
+    if (action) action.textContent = old;
+  }, 1100);
+}
+</script>
 </body>
 </html>
