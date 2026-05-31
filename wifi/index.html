@@ -13,11 +13,26 @@
 </head>
 <body>
 <main>
-<div class="top"><a class="back" href="../">←</a><h1>📶 Wi-Fi information</h1></div><article class="content"><p>Wi-Fi情報</p>
-<h3>Wi-Fi information</h3>
-<h3>ID: TP-Link_61E8</h3>
-<p>PASS : 45441745</p></article>
+<div class="top"><a class="back" href="../">←</a><h1>📶 Wi-Fi information</h1></div>
+<article class="wifi-detail" aria-labelledby="wifi-page-title">
+<div class="wifi-detail-head"><span class="wifi-head-emoji" aria-hidden="true">📶</span><div><p class="eyebrow">Wi-Fi</p><h2 id="wifi-page-title">Connect to the Wi-Fi</h2><p>カメラでQRコードを読み取るか、下の情報をコピーして接続してください。</p></div></div>
+<div class="wifi-rows"><button class="wifi-row wifi-row-light" onclick="copyWifi(this, 'TP-Link_61E8')" aria-label="Copy network name"><span class="wifi-row-label">Network</span><span class="wifi-row-val">TP-Link_61E8</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button><button class="wifi-row wifi-row-light" onclick="copyWifi(this, '45441745')" aria-label="Copy password"><span class="wifi-row-label">Password</span><span class="wifi-row-val">45441745</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button></div>
+<div class="wifi-qr visible"><img src="../images/wifi-qr.png" alt="Wi-Fi QR code for TP-Link_61E8" width="320" height="320"><p class="wifi-qr-hint">Scan with your camera to connect</p></div>
+</article>
 
 </main>
+<script>
+function copyWifi(el, text) {
+  navigator.clipboard?.writeText(text);
+  const old = el.querySelector('.wifi-row-action')?.textContent || '⧉';
+  el.classList.add('copied');
+  const action = el.querySelector('.wifi-row-action');
+  if (action) action.textContent = '✓';
+  setTimeout(() => {
+    el.classList.remove('copied');
+    if (action) action.textContent = old;
+  }, 1100);
+}
+</script>
 </body>
 </html>
