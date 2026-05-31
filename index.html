@@ -30,8 +30,7 @@
 <section class="intro"><p data-i18n="introText">Please use the menu below for check-in, Wi-Fi, house rules, and neighborhood information.</p></section><section class="wifi-card" aria-labelledby="wifi-title"><div class="wifi-head"><span class="wifi-head-emoji" aria-hidden="true">📶</span><span class="wifi-head-label" id="wifi-title" data-i18n="wifiLabel">Wi-Fi</span></div><div class="wifi-rows"><button class="wifi-row" onclick="copyWifi(this, 'TP-Link_61E8')" aria-label="Copy network name"><span class="wifi-row-label" data-i18n="ssidLabel">Network</span><span class="wifi-row-val">TP-Link_61E8</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button><button class="wifi-row" onclick="copyWifi(this, '45441745')" aria-label="Copy password"><span class="wifi-row-label" data-i18n="passLabel">Password</span><span class="wifi-row-val">45441745</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button></div><a class="wifi-qr-link" href="wifi/" data-i18n="qrBtn">Show QR code</a></section>
 <nav class="menu" aria-label="Guest menu"><div class="menu-group"><div class="menu-group-head"><span class="menu-group-title" data-i18n="catArrive">Arriving</span><span class="menu-group-line"></span></div><div class="btn-grid"><a href="access/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🏠</span></span><span class="pl-en" data-i18n="btnAccess">Route to Accommodations</span><span class="pl-ja">宿泊施設へのご案内</span></a>
 <a href="airport/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">✈️</span></span><span class="pl-en" data-i18n="btnAirport">From Haneda &amp; Narita Airport</span><span class="pl-ja">羽田空港＆成田空港から</span></a>
-<a href="taxi/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🚕</span></span><span class="pl-en" data-i18n="btnTaxi">For Taxi</span><span class="pl-ja">タクシーをご利用の場合</span></a>
-<a href="key/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🔑</span></span><span class="pl-en" data-i18n="btnKey">Key information</span><span class="pl-ja">鍵の情報</span></a></div></div>
+<a href="taxi/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🚕</span></span><span class="pl-en" data-i18n="btnTaxi">For Taxi</span><span class="pl-ja">タクシーをご利用の場合</span></a></div></div>
 <div class="menu-group"><div class="menu-group-head"><span class="menu-group-title" data-i18n="catInside">Inside the Home</span><span class="menu-group-line"></span></div><div class="btn-grid"><a href="wifi/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">📶</span></span><span class="pl-en" data-i18n="btnWifi">Wi-Fi information</span><span class="pl-ja">Wi-Fi情報</span></a>
 <a href="manual/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">📖</span></span><span class="pl-en" data-i18n="btnManual">House Manual</span><span class="pl-ja">ハウスマニュアル</span></a></div></div>
 <div class="menu-group"><div class="menu-group-head"><span class="menu-group-title" data-i18n="catHelp">Help & Neighborhood</span><span class="menu-group-line"></span></div><div class="btn-grid"><a href="nearby/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🏃</span></span><span class="pl-en" data-i18n="btnNearby">Neighbor Map</span><span class="pl-ja">近隣のお店情報</span></a>
@@ -53,7 +52,6 @@ const UI_STRINGS = {
     btnAccess: 'Route to Accommodations',
     btnAirport: 'From Haneda & Narita Airport',
     btnTaxi: 'For Taxi',
-    btnKey: 'Key information',
     btnWifi: 'Wi-Fi information',
     btnManual: 'House Manual',
     btnNearby: 'Neighbor Map',
@@ -73,7 +71,6 @@ const UI_STRINGS = {
     btnAccess: '宿泊施設へのご案内',
     btnAirport: '羽田空港＆成田空港から',
     btnTaxi: 'タクシーをご利用の場合',
-    btnKey: '鍵の情報',
     btnWifi: 'Wi-Fi情報',
     btnManual: 'ハウスマニュアル',
     btnNearby: '近隣のお店情報',
@@ -93,7 +90,6 @@ const UI_STRINGS = {
     btnAccess: '前往住宿路线',
     btnAirport: '从羽田/成田机场',
     btnTaxi: '乘坐出租车',
-    btnKey: '钥匙信息',
     btnWifi: 'Wi-Fi 信息',
     btnManual: '房屋手册',
     btnNearby: '周边地图',
@@ -113,7 +109,6 @@ const UI_STRINGS = {
     btnAccess: '숙소까지 가는 길',
     btnAirport: '하네다/나리타 공항에서',
     btnTaxi: '택시 이용 안내',
-    btnKey: '열쇠 정보',
     btnWifi: 'Wi-Fi 정보',
     btnManual: '하우스 매뉴얼',
     btnNearby: '주변 지도',
@@ -133,7 +128,6 @@ const UI_STRINGS = {
     btnAccess: 'Itinéraire vers le logement',
     btnAirport: 'Depuis Haneda & Narita',
     btnTaxi: 'En taxi',
-    btnKey: 'Informations clé',
     btnWifi: 'Informations Wi-Fi',
     btnManual: 'Manuel du logement',
     btnNearby: 'Carte du quartier',
@@ -153,7 +147,6 @@ const UI_STRINGS = {
     btnAccess: 'Ruta al alojamiento',
     btnAirport: 'Desde Haneda y Narita',
     btnTaxi: 'En taxi',
-    btnKey: 'Información de la llave',
     btnWifi: 'Información Wi-Fi',
     btnManual: 'Manual de la casa',
     btnNearby: 'Mapa del barrio',
