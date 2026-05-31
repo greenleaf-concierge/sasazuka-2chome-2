@@ -4,26 +4,175 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#fdf6ee">
-<title>Welcome to Sasazuka 2Chōme</title>
+<title>Sasazuka 2Chōme — Guest Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<main>
-<section class="hero"><div class="mark">🏠</div><h1>Sasazuka 2Chōme</h1><p>笹塚2丁目</p></section><section class="wifi-card" aria-labelledby="wifi-title"><div class="wifi-head"><span class="wifi-head-emoji" aria-hidden="true">📶</span><span class="wifi-head-label" id="wifi-title">Wi-Fi</span></div><div class="wifi-rows"><button class="wifi-row" onclick="copyWifi(this, 'TP-Link_61E8')" aria-label="Copy network name"><span class="wifi-row-label">Network</span><span class="wifi-row-val">TP-Link_61E8</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button><button class="wifi-row" onclick="copyWifi(this, '45441745')" aria-label="Copy password"><span class="wifi-row-label">Password</span><span class="wifi-row-val">45441745</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button></div><a class="wifi-qr-link" href="wifi/">Show QR code</a></section>
-<nav class="menu" aria-label="Guest menu"><div class="menu-group"><div class="menu-group-head"><span class="menu-group-title">Arriving</span><span class="menu-group-line"></span></div><div class="btn-grid"><a href="access/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🏠</span></span><span class="pl-en">Route to Accommodations</span><span class="pl-ja">宿泊施設へのご案内</span></a>
-<a href="airport/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">✈️</span></span><span class="pl-en">From Haneda &amp; Narita Airport</span><span class="pl-ja">羽田空港＆成田空港から</span></a>
-<a href="taxi/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🚕</span></span><span class="pl-en">For Taxi</span><span class="pl-ja">タクシーをご利用の場合</span></a>
-<a href="key/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🔑</span></span><span class="pl-en">Key information</span><span class="pl-ja">鍵の情報</span></a></div></div>
-<div class="menu-group"><div class="menu-group-head"><span class="menu-group-title">Inside the Home</span><span class="menu-group-line"></span></div><div class="btn-grid"><a href="wifi/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">📶</span></span><span class="pl-en">Wi-Fi information</span><span class="pl-ja">Wi-Fi情報</span></a>
-<a href="manual/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">📖</span></span><span class="pl-en">House Manual</span><span class="pl-ja">ハウスマニュアル</span></a></div></div>
-<div class="menu-group"><div class="menu-group-head"><span class="menu-group-title">Help & Neighborhood</span><span class="menu-group-line"></span></div><div class="btn-grid"><a href="nearby/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🏃</span></span><span class="pl-en">Neighbor Map</span><span class="pl-ja">近隣のお店情報</span></a>
-<a href="emergency/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">☎️</span></span><span class="pl-en">Emergency</span><span class="pl-ja">緊急時の連絡方法</span></a>
-<a href="transportation/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🚖</span></span><span class="pl-en">Transportation Services</span><span class="pl-ja">提携サービス</span></a></div></div></nav>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="top-bar">
+  <div class="sub" data-i18n="guideInfo">Guest Guide</div>
+  <h1>Sasazuka 2Chōme</h1>
+</header>
+<nav class="lang-bar" aria-label="Language">
+<button class="lang-btn active" onclick="setLang('en', this)" aria-label="English">EN</button>
+<button class="lang-btn" onclick="setLang('ja', this)" aria-label="日本語">日本語</button>
+<button class="lang-btn" onclick="setLang('zh', this)" aria-label="中文">中文</button>
+<button class="lang-btn" onclick="setLang('ko', this)" aria-label="한국어">한국어</button>
+<button class="lang-btn" onclick="setLang('fr', this)" aria-label="Français">FR</button>
+<button class="lang-btn" onclick="setLang('es', this)" aria-label="Español">ES</button>
+</nav>
+<main id="main">
+<section class="intro"><p data-i18n="introText">Please use the menu below for check-in, Wi-Fi, house rules, and neighborhood information.</p></section><section class="wifi-card" aria-labelledby="wifi-title"><div class="wifi-head"><span class="wifi-head-emoji" aria-hidden="true">📶</span><span class="wifi-head-label" id="wifi-title" data-i18n="wifiLabel">Wi-Fi</span></div><div class="wifi-rows"><button class="wifi-row" onclick="copyWifi(this, 'TP-Link_61E8')" aria-label="Copy network name"><span class="wifi-row-label" data-i18n="ssidLabel">Network</span><span class="wifi-row-val">TP-Link_61E8</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button><button class="wifi-row" onclick="copyWifi(this, '45441745')" aria-label="Copy password"><span class="wifi-row-label" data-i18n="passLabel">Password</span><span class="wifi-row-val">45441745</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button></div><a class="wifi-qr-link" href="wifi/" data-i18n="qrBtn">Show QR code</a></section>
+<nav class="menu" aria-label="Guest menu"><div class="menu-group"><div class="menu-group-head"><span class="menu-group-title" data-i18n="catArrive">Arriving</span><span class="menu-group-line"></span></div><div class="btn-grid"><a href="access/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🏠</span></span><span class="pl-en" data-i18n="btnAccess">Route to Accommodations</span><span class="pl-ja">宿泊施設へのご案内</span></a>
+<a href="airport/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">✈️</span></span><span class="pl-en" data-i18n="btnAirport">From Haneda &amp; Narita Airport</span><span class="pl-ja">羽田空港＆成田空港から</span></a>
+<a href="taxi/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🚕</span></span><span class="pl-en" data-i18n="btnTaxi">For Taxi</span><span class="pl-ja">タクシーをご利用の場合</span></a>
+<a href="key/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🔑</span></span><span class="pl-en" data-i18n="btnKey">Key information</span><span class="pl-ja">鍵の情報</span></a></div></div>
+<div class="menu-group"><div class="menu-group-head"><span class="menu-group-title" data-i18n="catInside">Inside the Home</span><span class="menu-group-line"></span></div><div class="btn-grid"><a href="wifi/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">📶</span></span><span class="pl-en" data-i18n="btnWifi">Wi-Fi information</span><span class="pl-ja">Wi-Fi情報</span></a>
+<a href="manual/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">📖</span></span><span class="pl-en" data-i18n="btnManual">House Manual</span><span class="pl-ja">ハウスマニュアル</span></a></div></div>
+<div class="menu-group"><div class="menu-group-head"><span class="menu-group-title" data-i18n="catHelp">Help & Neighborhood</span><span class="menu-group-line"></span></div><div class="btn-grid"><a href="nearby/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🏃</span></span><span class="pl-en" data-i18n="btnNearby">Neighbor Map</span><span class="pl-ja">近隣のお店情報</span></a>
+<a href="emergency/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">☎️</span></span><span class="pl-en" data-i18n="btnEmergency">Emergency</span><span class="pl-ja">緊急時の連絡方法</span></a>
+<a href="transportation/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🚖</span></span><span class="pl-en" data-i18n="btnTransport">Transportation Services</span><span class="pl-ja">提携サービス</span></a></div></div></nav>
 </main>
 <script>
+const UI_STRINGS = {
+  en: {
+    guideInfo: 'Guest Guide',
+    introText: 'Please use the menu below for check-in, Wi-Fi, house rules, and neighborhood information.',
+    wifiLabel: 'Wi-Fi',
+    ssidLabel: 'Network',
+    passLabel: 'Password',
+    qrBtn: 'Show QR code',
+    catArrive: 'Arriving',
+    catInside: 'Inside the Home',
+    catHelp: 'Help & Neighborhood',
+    btnAccess: 'Route to Accommodations',
+    btnAirport: 'From Haneda & Narita Airport',
+    btnTaxi: 'For Taxi',
+    btnKey: 'Key information',
+    btnWifi: 'Wi-Fi information',
+    btnManual: 'House Manual',
+    btnNearby: 'Neighbor Map',
+    btnEmergency: 'Emergency',
+    btnTransport: 'Transportation Services'
+  },
+  ja: {
+    guideInfo: '宿泊ガイド',
+    introText: 'チェックイン、Wi-Fi、ハウスルール、周辺情報は下のメニューからご確認ください。',
+    wifiLabel: 'Wi-Fi',
+    ssidLabel: 'ネットワーク',
+    passLabel: 'パスワード',
+    qrBtn: 'QRコードを表示',
+    catArrive: '到着時',
+    catInside: '室内案内',
+    catHelp: '周辺・緊急時',
+    btnAccess: '宿泊施設へのご案内',
+    btnAirport: '羽田空港＆成田空港から',
+    btnTaxi: 'タクシーをご利用の場合',
+    btnKey: '鍵の情報',
+    btnWifi: 'Wi-Fi情報',
+    btnManual: 'ハウスマニュアル',
+    btnNearby: '近隣のお店情報',
+    btnEmergency: '緊急時の連絡方法',
+    btnTransport: '提携サービス'
+  },
+  zh: {
+    guideInfo: '住宿指南',
+    introText: '请从下方菜单查看入住、Wi-Fi、房屋规则和周边信息。',
+    wifiLabel: 'Wi-Fi',
+    ssidLabel: '网络',
+    passLabel: '密码',
+    qrBtn: '显示二维码',
+    catArrive: '抵达',
+    catInside: '房内信息',
+    catHelp: '帮助与周边',
+    btnAccess: '前往住宿路线',
+    btnAirport: '从羽田/成田机场',
+    btnTaxi: '乘坐出租车',
+    btnKey: '钥匙信息',
+    btnWifi: 'Wi-Fi 信息',
+    btnManual: '房屋手册',
+    btnNearby: '周边地图',
+    btnEmergency: '紧急联系',
+    btnTransport: '交通服务'
+  },
+  ko: {
+    guideInfo: '숙박 안내',
+    introText: '체크인, Wi-Fi, 하우스 룰, 주변 정보는 아래 메뉴에서 확인해 주세요.',
+    wifiLabel: 'Wi-Fi',
+    ssidLabel: '네트워크',
+    passLabel: '비밀번호',
+    qrBtn: 'QR 코드 보기',
+    catArrive: '도착 안내',
+    catInside: '숙소 내부',
+    catHelp: '도움말 & 주변',
+    btnAccess: '숙소까지 가는 길',
+    btnAirport: '하네다/나리타 공항에서',
+    btnTaxi: '택시 이용 안내',
+    btnKey: '열쇠 정보',
+    btnWifi: 'Wi-Fi 정보',
+    btnManual: '하우스 매뉴얼',
+    btnNearby: '주변 지도',
+    btnEmergency: '긴급 연락',
+    btnTransport: '교통 서비스'
+  },
+  fr: {
+    guideInfo: 'Guide Voyageur',
+    introText: 'Utilisez le menu ci-dessous pour le check-in, le Wi-Fi, le règlement et les informations du quartier.',
+    wifiLabel: 'Wi-Fi',
+    ssidLabel: 'Réseau',
+    passLabel: 'Mot de passe',
+    qrBtn: 'Afficher le QR code',
+    catArrive: 'Arrivée',
+    catInside: 'Dans le logement',
+    catHelp: 'Aide & Quartier',
+    btnAccess: 'Itinéraire vers le logement',
+    btnAirport: 'Depuis Haneda & Narita',
+    btnTaxi: 'En taxi',
+    btnKey: 'Informations clé',
+    btnWifi: 'Informations Wi-Fi',
+    btnManual: 'Manuel du logement',
+    btnNearby: 'Carte du quartier',
+    btnEmergency: 'Urgences',
+    btnTransport: 'Services de transport'
+  },
+  es: {
+    guideInfo: 'Guía del huésped',
+    introText: 'Use el menú inferior para check-in, Wi-Fi, normas de la casa e información del barrio.',
+    wifiLabel: 'Wi-Fi',
+    ssidLabel: 'Red',
+    passLabel: 'Contraseña',
+    qrBtn: 'Mostrar código QR',
+    catArrive: 'Llegada',
+    catInside: 'Dentro del alojamiento',
+    catHelp: 'Ayuda y barrio',
+    btnAccess: 'Ruta al alojamiento',
+    btnAirport: 'Desde Haneda y Narita',
+    btnTaxi: 'En taxi',
+    btnKey: 'Información de la llave',
+    btnWifi: 'Información Wi-Fi',
+    btnManual: 'Manual de la casa',
+    btnNearby: 'Mapa del barrio',
+    btnEmergency: 'Emergencias',
+    btnTransport: 'Servicios de transporte'
+  }
+};
+function applyTranslations(lang) {
+  const t = UI_STRINGS[lang] || UI_STRINGS.en;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (key in t) el.textContent = t[key];
+  });
+}
+function setLang(lang, btn) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.documentElement.lang = lang;
+  applyTranslations(lang);
+  try { localStorage.setItem('sasazukaLang', lang); } catch (e) {}
+}
 function copyWifi(el, text) {
   navigator.clipboard?.writeText(text);
   const old = el.querySelector('.wifi-row-action')?.textContent || '⧉';
@@ -34,6 +183,11 @@ function copyWifi(el, text) {
     el.classList.remove('copied');
     if (action) action.textContent = old;
   }, 1100);
+}
+const savedLang = (() => { try { return localStorage.getItem('sasazukaLang'); } catch (e) { return null; } })();
+if (savedLang && UI_STRINGS[savedLang]) {
+  const btn = document.querySelector(`.lang-btn[onclick*="'${savedLang}'"]`);
+  if (btn) setLang(savedLang, btn);
 }
 </script>
 </body>
