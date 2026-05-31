@@ -3,38 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fdf6ee">
-<title>Route to Accommodations — Sasazuka 2Chōme
-笹塚2丁目</title>
+<meta name="theme-color" content="#f7f9fc">
+<title>Route to Accommodations - Sasazuka 2Chome</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
+<style>.sub-lang-bar{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px 12px 12px}.sub-lang-bar .lang-btn.active{background:var(--teal-dark);color:#fff;border-color:var(--teal-dark)}.content a,.wifi-detail a{color:var(--teal-dark);font-weight:900}.content ul{font-weight:750}.content strong{color:var(--teal-dark)}</style>
 </head>
 <body>
 <main>
-<div class="top"><a class="back" href="../">←</a><h1>🏠 Route to Accommodations</h1></div><article class="content"><p>宿泊施設へのご案内</p>
-<h3>Address</h3>
-<h4>Tokyo, Shibuya, Sasazuka, 2-chōme−37−7　〒151-0073</h4>
-<h4>宿泊施設住所</h4>
-<h4>〒151-0073　東京都渋谷区笹塚2-37-7</h4>
+<nav class="sub-lang-bar" aria-label="Language"><button class="lang-btn active" onclick="setLang('en', this)">EN</button><button class="lang-btn" onclick="setLang('ja', this)">JA</button><button class="lang-btn" onclick="setLang('zh', this)">ZH</button><button class="lang-btn" onclick="setLang('ko', this)">KO</button><button class="lang-btn" onclick="setLang('fr', this)">FR</button><button class="lang-btn" onclick="setLang('es', this)">ES</button></nav>
+<div class="top"><a class="back" href="../">←</a><h1><span aria-hidden="true">🏠</span> <span data-title>Route to Accommodations</span></h1></div>
+<article class="content"><div data-content></div>
 <figure><img src="../images/スクリーンショット_2025-01-09_11.36.45.png" alt="スクリーンショット 2025-01-09 11.36.45.png" loading="lazy"></figure>
-<p>NOTE:Google Maps does not show the correct location.</p>
-<p>Please refer to the locations marked with red circles below.</p>
-<p>ご注意:Googleマップでは正しい位置が表示されません。</p>
-<p>以下の赤マルの場所を参考にして下さい。</p>
 <figure><img src="../images/Our_(2).jpg" alt="Our (2).jpg" loading="lazy"></figure>
-<p>&gt; [!NOTE]</p>
-<p>&gt; ### Nearest Station</p>
-<p>&gt;</p>
-<p>&gt; #### Sasazuka Station (Keio Line)8min walk</p>
-<p>&gt;</p>
-<p>&gt; #### 最寄り駅</p>
-<p>&gt;</p>
-<p>&gt; ##### 笹塚駅（京王線）徒歩8分</p>
-<p>&gt;</p>
-<h3>From Sasazuka station to your accommodation</h3>
-<h4>笹塚駅から宿泊施設まで</h4>
 <figure><img src="../images/名称未設定のデザイン_(8).jpg" alt="名称未設定のデザイン (8).jpg" loading="lazy"></figure>
 <figure><img src="../images/名称未設定のデザイン_(9).jpg" alt="名称未設定のデザイン (9).jpg" loading="lazy"></figure>
 <figure><img src="../images/名称未設定のデザイン_(10).jpg" alt="名称未設定のデザイン (10).jpg" loading="lazy"></figure>
@@ -48,7 +31,39 @@
 <figure><img src="../images/名称未設定のデザイン_(17).jpg" alt="名称未設定のデザイン (17).jpg" loading="lazy"></figure>
 <figure><img src="../images/名称未設定のデザイン_(18).jpg" alt="名称未設定のデザイン (18).jpg" loading="lazy"></figure>
 <figure><img src="../images/名称未設定のデザイン_(7).jpg" alt="名称未設定のデザイン (7).jpg" loading="lazy"></figure></article>
-
 </main>
+<script>
+const STRINGS={"en":{"title":"Route to Accommodations","html":"\u003cp>Use this page to find the accommodation from Sasazuka Station.\u003c/p>\u003ch3>Address\u003c/h3>\u003ch4>Tokyo, Shibuya, Sasazuka, 2-chome-37-7 〒151-0073\u003c/h4>\u003cp>Google Maps may not show the exact entrance. Please refer to the marked location below.\u003c/p>\u003ch3>Nearest Station\u003c/h3>\u003cp>Sasazuka Station (Keio Line), about 8 minutes on foot.\u003c/p>\u003ch3>From Sasazuka Station\u003c/h3>\u003cp>Follow the photos below from the station to the accommodation.\u003c/p>"},"ja":{"title":"宿泊施設へのご案内","html":"\u003cp>笹塚駅から宿泊施設までの行き方です。\u003c/p>\u003ch3>住所\u003c/h3>\u003ch4>〒151-0073 東京都渋谷区笹塚2-37-7\u003c/h4>\u003cp>Google Mapsでは入口位置が正確に表示されない場合があります。下の印の場所を参考にしてください。\u003c/p>\u003ch3>最寄り駅\u003c/h3>\u003cp>笹塚駅（京王線）徒歩約8分です。\u003c/p>\u003ch3>笹塚駅から宿泊施設まで\u003c/h3>\u003cp>駅から宿泊施設までは、以下の写真を順番にご確認ください。\u003c/p>"},"zh":{"title":"前往住宿","html":"\u003cp>请使用本页从笹塚站前往住宿。\u003c/p>\u003ch3>地址\u003c/h3>\u003ch4>东京都涩谷区笹塚2-37-7 〒151-0073\u003c/h4>\u003cp>Google Maps 可能无法准确显示入口位置。请参考下方标记的位置。\u003c/p>\u003ch3>最近车站\u003c/h3>\u003cp>笹塚站（京王线），步行约8分钟。\u003c/p>\u003ch3>从笹塚站出发\u003c/h3>\u003cp>请按照下方照片从车站前往住宿。\u003c/p>"},"ko":{"title":"숙소까지 가는 길","html":"\u003cp>사사즈카역에서 숙소까지 가는 방법입니다.\u003c/p>\u003ch3>주소\u003c/h3>\u003ch4>도쿄도 시부야구 사사즈카 2-37-7 〒151-0073\u003c/h4>\u003cp>Google Maps에 입구 위치가 정확히 표시되지 않을 수 있습니다. 아래 표시된 위치를 참고해 주세요.\u003c/p>\u003ch3>가장 가까운 역\u003c/h3>\u003cp>사사즈카역(게이오선), 도보 약 8분.\u003c/p>\u003ch3>사사즈카역에서 숙소까지\u003c/h3>\u003cp>아래 사진 순서대로 이동해 주세요.\u003c/p>"},"fr":{"title":"Acces au logement","html":"\u003cp>Utilisez cette page pour rejoindre le logement depuis la gare de Sasazuka.\u003c/p>\u003ch3>Adresse\u003c/h3>\u003ch4>Tokyo, Shibuya, Sasazuka, 2-chome-37-7 〒151-0073\u003c/h4>\u003cp>Google Maps peut ne pas indiquer exactement l'entree. Veuillez vous referer au point marque ci-dessous.\u003c/p>\u003ch3>Gare la plus proche\u003c/h3>\u003cp>Gare de Sasazuka (ligne Keio), environ 8 minutes a pied.\u003c/p>\u003ch3>Depuis la gare de Sasazuka\u003c/h3>\u003cp>Suivez les photos ci-dessous pour rejoindre le logement.\u003c/p>"},"es":{"title":"Ruta al alojamiento","html":"\u003cp>Use esta pagina para llegar al alojamiento desde la estacion Sasazuka.\u003c/p>\u003ch3>Direccion\u003c/h3>\u003ch4>Tokyo, Shibuya, Sasazuka, 2-chome-37-7 〒151-0073\u003c/h4>\u003cp>Google Maps puede no mostrar la entrada exacta. Consulte la ubicacion marcada abajo.\u003c/p>\u003ch3>Estacion mas cercana\u003c/h3>\u003cp>Estacion Sasazuka (linea Keio), unos 8 minutos a pie.\u003c/p>\u003ch3>Desde la estacion Sasazuka\u003c/h3>\u003cp>Siga las fotos de abajo hasta el alojamiento.\u003c/p>"}};
+const LABELS={
+  en:{network:'Network',password:'Password',qr:'Scan with your camera to connect'},
+  ja:{network:'ネットワーク',password:'パスワード',qr:'カメラで読み取って接続できます'},
+  zh:{network:'网络',password:'密码',qr:'用相机扫描即可连接'},
+  ko:{network:'네트워크',password:'비밀번호',qr:'카메라로 스캔하여 연결하세요'},
+  fr:{network:'Reseau',password:'Mot de passe',qr:'Scannez avec votre appareil photo'},
+  es:{network:'Red',password:'Contrasena',qr:'Escanee con la camara'}
+};
+function setLang(lang, btn){
+  const t=STRINGS[lang]||STRINGS.en;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelector('[data-title]').textContent=t.title;
+  document.querySelector('[data-content]').innerHTML=t.html;
+  const labels=LABELS[lang]||LABELS.en;
+  document.querySelectorAll('[data-label]').forEach(el=>{ const k=el.getAttribute('data-label'); if(labels[k]) el.textContent=labels[k]; });
+  localStorage.setItem('sasazukaLang', lang);
+}
+function copyWifi(el,text){
+  navigator.clipboard?.writeText(text);
+  const action=el.querySelector('.wifi-row-action');
+  const old=action?.textContent||'⧉';
+  el.classList.add('copied');
+  if(action) action.textContent='✓';
+  setTimeout(()=>{el.classList.remove('copied'); if(action) action.textContent=old;},1100);
+}
+const saved=localStorage.getItem('sasazukaLang')||'en';
+const btn=document.querySelector(`.lang-btn[onclick*="'${saved}'"]`);
+setLang(saved, btn||document.querySelector('.lang-btn'));
+</script>
 </body>
 </html>
