@@ -3,24 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fdf6ee">
-<title>Laundry — Sasazuka 2Chome</title>
+<meta name="theme-color" content="#f7f9fc">
+<title>Laundry - Sasazuka 2Chome</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
+<style>.sub-lang-bar{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px 12px 12px}.sub-lang-bar .lang-btn.active{background:var(--teal-dark);color:#fff;border-color:var(--teal-dark)}.content a,.wifi-detail a{color:var(--teal-dark);font-weight:900}.content ul{font-weight:750}.content strong{color:var(--teal-dark)}</style>
 </head>
 <body>
 <main>
-<div class="top"><a class="back" href="../">←</a><h1>🫧 Laundry</h1></div>
-<article class="content">
-<h3>How to use the washing machine</h3>
-<p>洗濯機</p>
-<figure><img src="../images/笹塚_洗濯機.png" alt="Washing machine" loading="lazy"></figure>
-<h4>① ON/OFF</h4>
-<p>② Select a course: 標準 = standard, スピード = Quick Wash</p>
-<p>③ Start / Pause</p>
-</article>
+<nav class="sub-lang-bar" aria-label="Language"><button class="lang-btn active" onclick="setLang('en', this)">EN</button><button class="lang-btn" onclick="setLang('ja', this)">JA</button><button class="lang-btn" onclick="setLang('zh', this)">ZH</button><button class="lang-btn" onclick="setLang('ko', this)">KO</button><button class="lang-btn" onclick="setLang('fr', this)">FR</button><button class="lang-btn" onclick="setLang('es', this)">ES</button></nav>
+<div class="top"><a class="back" href="../">←</a><h1><span aria-hidden="true">🫧</span> <span data-title>Laundry</span></h1></div>
+<article class="content"><div data-content></div>
+<figure><img src="../images/笹塚_洗濯機.png" alt="笹塚 洗濯機.png" loading="lazy"></figure></article>
 </main>
+<script>
+const STRINGS={"en":{"title":"Laundry","html":"\u003ch3>How to use the washing machine\u003c/h3>\u003cp>1. On/Off\u003c/p>\u003cp>2. Select a course: Standard or Quick Wash.\u003c/p>\u003cp>3. Start / Pause.\u003c/p>"},"ja":{"title":"洗濯機の使い方","html":"\u003ch3>洗濯機の使い方\u003c/h3>\u003cp>1. 電源\u003c/p>\u003cp>2. コース選択: 標準またはスピード。\u003c/p>\u003cp>3. スタート / 一時停止。\u003c/p>"},"zh":{"title":"洗衣机使用方法","html":"\u003ch3>洗衣机使用方法\u003c/h3>\u003cp>1. 开/关。\u003c/p>\u003cp>2. 选择模式: 标准或快速洗。\u003c/p>\u003cp>3. 开始 / 暂停。\u003c/p>"},"ko":{"title":"세탁기 사용법","html":"\u003ch3>세탁기 사용법\u003c/h3>\u003cp>1. 전원.\u003c/p>\u003cp>2. 코스 선택: 표준 또는 빠른 세탁.\u003c/p>\u003cp>3. 시작 / 일시정지.\u003c/p>"},"fr":{"title":"Lave-linge","html":"\u003ch3>Comment utiliser le lave-linge\u003c/h3>\u003cp>1. Marche/arret.\u003c/p>\u003cp>2. Choisir un programme: standard ou lavage rapide.\u003c/p>\u003cp>3. Demarrer / pause.\u003c/p>"},"es":{"title":"Lavadora","html":"\u003ch3>Como usar la lavadora\u003c/h3>\u003cp>1. Encendido/apagado.\u003c/p>\u003cp>2. Seleccione un programa: estandar o lavado rapido.\u003c/p>\u003cp>3. Inicio / pausa.\u003c/p>"}};
+const LABELS={
+  en:{network:'Network',password:'Password',qr:'Scan with your camera to connect'},
+  ja:{network:'ネットワーク',password:'パスワード',qr:'カメラで読み取って接続できます'},
+  zh:{network:'网络',password:'密码',qr:'用相机扫描即可连接'},
+  ko:{network:'네트워크',password:'비밀번호',qr:'카메라로 스캔하여 연결하세요'},
+  fr:{network:'Reseau',password:'Mot de passe',qr:'Scannez avec votre appareil photo'},
+  es:{network:'Red',password:'Contrasena',qr:'Escanee con la camara'}
+};
+function setLang(lang, btn){
+  const t=STRINGS[lang]||STRINGS.en;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelector('[data-title]').textContent=t.title;
+  document.querySelector('[data-content]').innerHTML=t.html;
+  const labels=LABELS[lang]||LABELS.en;
+  document.querySelectorAll('[data-label]').forEach(el=>{ const k=el.getAttribute('data-label'); if(labels[k]) el.textContent=labels[k]; });
+  localStorage.setItem('sasazukaLang', lang);
+}
+function copyWifi(el,text){
+  navigator.clipboard?.writeText(text);
+  const action=el.querySelector('.wifi-row-action');
+  const old=action?.textContent||'⧉';
+  el.classList.add('copied');
+  if(action) action.textContent='✓';
+  setTimeout(()=>{el.classList.remove('copied'); if(action) action.textContent=old;},1100);
+}
+const saved=localStorage.getItem('sasazukaLang')||'en';
+const btn=document.querySelector(`.lang-btn[onclick*="'${saved}'"]`);
+setLang(saved, btn||document.querySelector('.lang-btn'));
+</script>
 </body>
 </html>
