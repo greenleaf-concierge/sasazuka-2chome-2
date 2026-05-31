@@ -4,25 +4,164 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#fdf6ee">
-<title>Key information — Sasazuka 2Chōme
-笹塚2丁目</title>
+<title>Key Information — Sasazuka 2Chōme</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
-<body>
-<main>
-<div class="top"><a class="back" href="../">←</a><h1>🔑 Key information</h1></div><article class="content"><p>鍵の情報</p>
-<figure><img src="../images/keybox-door.jpg" alt="Keybox attached to the entrance door" loading="lazy"></figure>
-<p>The keybox is located on the entrance door.</p>
-<p>鍵はキーボックスの中にございます。玄関のドアにキーボックスが付いています。</p>
-<figure><img src="../images/スクリーンショット_2026-02-18_14.36.01.png" alt="スクリーンショット 2026-02-18 14.36.01.png" loading="lazy"></figure>
-<h3>keynumber is 【4278】</h3>
-<p>Move the black button according to the picture.</p>
-<h3>鍵の番号は、 【4278】です。</h3>
-<p>写真のように、ツマミを移動させて開けることができます。</p></article>
-
+<body class="key-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="key-top-bar">
+  <a class="back" href="../" aria-label="Back to guide">←</a>
+  <div>
+    <div class="sub" data-i18n="pageLabel">Key Information</div>
+    <h1>Sasazuka 2Chōme</h1>
+  </div>
+</header>
+<nav class="lang-bar key-lang-bar" aria-label="Language">
+  <button class="lang-btn active" onclick="setLang('en', this)" aria-label="English">EN</button>
+  <button class="lang-btn" onclick="setLang('ja', this)" aria-label="日本語">日本語</button>
+  <button class="lang-btn" onclick="setLang('zh', this)" aria-label="中文">中文</button>
+  <button class="lang-btn" onclick="setLang('ko', this)" aria-label="한국어">한국어</button>
+  <button class="lang-btn" onclick="setLang('fr', this)" aria-label="Français">FR</button>
+  <button class="lang-btn" onclick="setLang('es', this)" aria-label="Español">ES</button>
+</nav>
+<main id="main">
+<section class="key-hero-card">
+  <div class="key-icon" aria-hidden="true">🔑</div>
+  <p class="eyebrow-dark" data-i18n="eyebrow">Self Check-in</p>
+  <h2 data-i18n="heroTitle">How to get the key</h2>
+  <p data-i18n="heroText">Please use the keybox attached to the entrance door.</p>
+</section>
+<section class="key-photo-grid" aria-label="Keybox photos">
+  <figure><img src="../images/keybox-door.jpg" alt="Keybox attached to the entrance door" loading="lazy"></figure>
+  <figure><img src="../images/スクリーンショット_2026-02-18_14.36.01.png" alt="Keybox number lock instructions" loading="lazy"></figure>
+</section>
+<article class="key-card">
+  <h3 data-i18n="stepsTitle">Entry Method</h3>
+  <ol class="step-list">
+    <li><span class="step-num">1</span><span data-i18n="stepOne">Find the keybox attached to the entrance door.</span></li>
+    <li><span class="step-num">2</span><span data-i18n="stepTwo">Move the black buttons to enter the code below.</span></li>
+    <li><span class="step-num">3</span><span data-i18n="stepThree">Open the keybox and take out the key.</span></li>
+  </ol>
+  <div class="code-box">
+    <span data-i18n="codeLabel">Keybox code</span>
+    <strong>4278</strong>
+  </div>
+</article>
+<article class="key-card">
+  <h3 data-i18n="returnTitle">After using the key</h3>
+  <p data-i18n="returnText">Please return the key to the keybox and close it securely after opening the door.</p>
+</article>
+<p class="key-note" data-i18n="noteText">If the keybox does not open, please check that each black button is moved fully into position.</p>
 </main>
+<script>
+const KEY_STRINGS = {
+  en: {
+    pageLabel: 'Key Information',
+    eyebrow: 'Self Check-in',
+    heroTitle: 'How to get the key',
+    heroText: 'Please use the keybox attached to the entrance door.',
+    stepsTitle: 'Entry Method',
+    stepOne: 'Find the keybox attached to the entrance door.',
+    stepTwo: 'Move the black buttons to enter the code below.',
+    stepThree: 'Open the keybox and take out the key.',
+    codeLabel: 'Keybox code',
+    returnTitle: 'After using the key',
+    returnText: 'Please return the key to the keybox and close it securely after opening the door.',
+    noteText: 'If the keybox does not open, please check that each black button is moved fully into position.'
+  },
+  ja: {
+    pageLabel: '鍵の情報',
+    eyebrow: 'セルフチェックイン',
+    heroTitle: '鍵の受け取り方法',
+    heroText: '玄関ドアに付いているキーボックスをご利用ください。',
+    stepsTitle: '入室方法',
+    stepOne: '玄関ドアに付いているキーボックスを確認してください。',
+    stepTwo: '黒いボタンを動かして、下記の番号に合わせてください。',
+    stepThree: 'キーボックスを開けて、鍵を取り出してください。',
+    codeLabel: 'キーボックス番号',
+    returnTitle: '鍵を使用したあとは',
+    returnText: 'ドアを開けた後は、鍵をキーボックスに戻してしっかり閉めてください。',
+    noteText: '開かない場合は、黒いボタンが写真の位置までしっかり動いているかご確認ください。'
+  },
+  zh: {
+    pageLabel: '钥匙信息',
+    eyebrow: '自助入住',
+    heroTitle: '如何取得钥匙',
+    heroText: '请使用安装在入口门上的钥匙盒。',
+    stepsTitle: '进入方法',
+    stepOne: '找到安装在入口门上的钥匙盒。',
+    stepTwo: '移动黑色按钮，输入下方密码。',
+    stepThree: '打开钥匙盒并取出钥匙。',
+    codeLabel: '钥匙盒密码',
+    returnTitle: '使用钥匙后',
+    returnText: '开门后，请将钥匙放回钥匙盒并确认关好。',
+    noteText: '如果钥匙盒无法打开，请确认每个黑色按钮都已完全移动到正确位置。'
+  },
+  ko: {
+    pageLabel: '열쇠 정보',
+    eyebrow: '셀프 체크인',
+    heroTitle: '열쇠 받는 방법',
+    heroText: '현관문에 부착된 키박스를 이용해 주세요.',
+    stepsTitle: '입실 방법',
+    stepOne: '현관문에 부착된 키박스를 확인해 주세요.',
+    stepTwo: '검은색 버튼을 움직여 아래 번호를 입력해 주세요.',
+    stepThree: '키박스를 열고 열쇠를 꺼내 주세요.',
+    codeLabel: '키박스 번호',
+    returnTitle: '열쇠 사용 후',
+    returnText: '문을 연 후에는 열쇠를 키박스에 다시 넣고 단단히 닫아 주세요.',
+    noteText: '키박스가 열리지 않으면 각 검은색 버튼이 정확한 위치까지 움직였는지 확인해 주세요.'
+  },
+  fr: {
+    pageLabel: 'Informations clé',
+    eyebrow: 'Check-in autonome',
+    heroTitle: 'Comment récupérer la clé',
+    heroText: 'Veuillez utiliser la boîte à clé fixée sur la porte d’entrée.',
+    stepsTitle: 'Méthode d’entrée',
+    stepOne: 'Repérez la boîte à clé fixée sur la porte d’entrée.',
+    stepTwo: 'Déplacez les boutons noirs pour saisir le code ci-dessous.',
+    stepThree: 'Ouvrez la boîte à clé et prenez la clé.',
+    codeLabel: 'Code de la boîte à clé',
+    returnTitle: 'Après utilisation',
+    returnText: 'Après avoir ouvert la porte, remettez la clé dans la boîte et refermez-la correctement.',
+    noteText: 'Si la boîte ne s’ouvre pas, vérifiez que chaque bouton noir est bien placé.'
+  },
+  es: {
+    pageLabel: 'Información de la llave',
+    eyebrow: 'Check-in autónomo',
+    heroTitle: 'Cómo obtener la llave',
+    heroText: 'Use la caja de llaves instalada en la puerta de entrada.',
+    stepsTitle: 'Método de entrada',
+    stepOne: 'Busque la caja de llaves instalada en la puerta de entrada.',
+    stepTwo: 'Mueva los botones negros para introducir el código de abajo.',
+    stepThree: 'Abra la caja de llaves y saque la llave.',
+    codeLabel: 'Código de la caja',
+    returnTitle: 'Después de usar la llave',
+    returnText: 'Después de abrir la puerta, devuelva la llave a la caja y ciérrela bien.',
+    noteText: 'Si la caja no se abre, compruebe que cada botón negro esté completamente en su posición.'
+  }
+};
+function applyTranslations(lang) {
+  const t = KEY_STRINGS[lang] || KEY_STRINGS.en;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (key in t) el.textContent = t[key];
+  });
+}
+function setLang(lang, btn) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.documentElement.lang = lang;
+  applyTranslations(lang);
+  try { localStorage.setItem('sasazukaLang', lang); } catch (e) {}
+}
+const savedLang = (() => { try { return localStorage.getItem('sasazukaLang'); } catch (e) { return null; } })();
+if (savedLang && KEY_STRINGS[savedLang]) {
+  const btn = document.querySelector(`.lang-btn[onclick*="'${savedLang}'"]`);
+  if (btn) setLang(savedLang, btn);
+}
+</script>
 </body>
 </html>
