@@ -27,7 +27,7 @@
 <button class="lang-btn" onclick="setLang('es', this)" aria-label="Español">ES</button>
 </nav>
 <main id="main">
-<section class="intro"><p data-i18n="introText">Please use the menu below for check-in, Wi-Fi, house rules, and neighborhood information.</p></section><section class="wifi-card" aria-labelledby="wifi-title"><div class="wifi-head"><span class="wifi-head-emoji" aria-hidden="true">📶</span><span class="wifi-head-label" id="wifi-title" data-i18n="wifiLabel">Wi-Fi</span></div><div class="wifi-rows"><button class="wifi-row" onclick="copyWifi(this, 'TP-Link_61E8')" aria-label="Copy network name"><span class="wifi-row-label" data-i18n="ssidLabel">Network</span><span class="wifi-row-val">TP-Link_61E8</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button><button class="wifi-row" onclick="copyWifi(this, '45441745')" aria-label="Copy password"><span class="wifi-row-label" data-i18n="passLabel">Password</span><span class="wifi-row-val">45441745</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button></div></section>
+<section class="intro"><p data-i18n="introText">Please use the menu below for check-in, Wi-Fi, house rules, and neighborhood information.</p></section><section class="wifi-card" aria-labelledby="wifi-title"><div class="wifi-head"><span class="wifi-head-emoji" aria-hidden="true">📶</span><span class="wifi-head-label" id="wifi-title" data-i18n="wifiLabel">Wi-Fi</span><button class="qr-toggle" id="qrToggle" onclick="toggleQR()" aria-expanded="false" aria-controls="wifiQr"><span class="qr-ico">▣</span><span data-i18n="qrBtn">QR</span></button></div><div class="wifi-rows"><button class="wifi-row" onclick="copyWifi(this, 'TP-Link_61E8')" aria-label="Copy network name"><span class="wifi-row-label" data-i18n="ssidLabel">Network</span><span class="wifi-row-val">TP-Link_61E8</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button><button class="wifi-row" onclick="copyWifi(this, '45441745')" aria-label="Copy password"><span class="wifi-row-label" data-i18n="passLabel">Password</span><span class="wifi-row-val">45441745</span><span class="wifi-row-action" aria-hidden="true">⧉</span></button></div><div class="wifi-qr" id="wifiQr"><img id="wifiQrImg" alt="Wi-Fi QR code" width="200" height="200"><p class="wifi-qr-hint" data-i18n="qrHint">Scan with your camera to connect</p></div></section>
 <nav class="menu" aria-label="Guest menu"><div class="menu-group"><div class="menu-group-head"><span class="menu-group-title" data-i18n="catArrive">Arriving</span><span class="menu-group-line"></span></div><div class="btn-grid"><a href="access/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🏠</span></span><span class="pl-en" data-i18n="btnAccess">Route to Accommodations</span><span class="pl-ja">宿泊施設へのご案内</span></a>
 <a href="airport/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">✈️</span></span><span class="pl-en" data-i18n="btnAirport">From Haneda &amp; Narita Airport</span><span class="pl-ja">羽田空港＆成田空港から</span></a>
 <a href="taxi/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🚕</span></span><span class="pl-en" data-i18n="btnTaxi">For Taxi</span><span class="pl-ja">タクシーをご利用の場合</span></a>
@@ -42,7 +42,9 @@
 <a href="emergency/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">☎️</span></span><span class="pl-en" data-i18n="btnEmergency">Emergency</span><span class="pl-ja">緊急時の連絡方法</span></a>
 <a href="transportation/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🚖</span></span><span class="pl-en" data-i18n="btnTransport">Transportation Services</span><span class="pl-ja">提携サービス</span></a></div></div></nav>
 </main>
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@master/qrcode.min.js" defer></script>
 <script>
+const WIFI = { ssid: 'TP-Link_61E8', password: '45441745', type: 'WPA' };
 const UI_STRINGS = {
   en: {
     guideInfo: 'Welcome guide',
@@ -50,7 +52,8 @@ const UI_STRINGS = {
     wifiLabel: 'Wi-Fi',
     ssidLabel: 'Network',
     passLabel: 'Password',
-    qrBtn: 'Show QR code',
+    qrBtn: 'QR',
+    qrHint: 'Scan with your camera to connect',
     catArrive: 'Arriving',
     catInside: 'Inside the Home',
     catHelp: 'Help & Neighborhood',
@@ -75,7 +78,8 @@ const UI_STRINGS = {
     wifiLabel: 'Wi-Fi',
     ssidLabel: 'ネットワーク',
     passLabel: 'パスワード',
-    qrBtn: 'QRコードを表示',
+    qrBtn: 'QR',
+    qrHint: 'カメラで読み取って接続できます',
     catArrive: '到着時',
     catInside: '室内案内',
     catHelp: '周辺・緊急時',
@@ -100,7 +104,8 @@ const UI_STRINGS = {
     wifiLabel: 'Wi-Fi',
     ssidLabel: '网络',
     passLabel: '密码',
-    qrBtn: '显示二维码',
+    qrBtn: 'QR',
+    qrHint: '用相机扫描即可连接',
     catArrive: '抵达',
     catInside: '房内信息',
     catHelp: '帮助与周边',
@@ -125,7 +130,8 @@ const UI_STRINGS = {
     wifiLabel: 'Wi-Fi',
     ssidLabel: '네트워크',
     passLabel: '비밀번호',
-    qrBtn: 'QR 코드 보기',
+    qrBtn: 'QR',
+    qrHint: '카메라로 스캔하여 연결하세요',
     catArrive: '도착 안내',
     catInside: '숙소 내부',
     catHelp: '도움말 & 주변',
@@ -150,7 +156,8 @@ const UI_STRINGS = {
     wifiLabel: 'Wi-Fi',
     ssidLabel: 'Réseau',
     passLabel: 'Mot de passe',
-    qrBtn: 'Afficher le QR code',
+    qrBtn: 'QR',
+    qrHint: 'Scannez avec votre appareil photo',
     catArrive: 'Arrivée',
     catInside: 'Dans le logement',
     catHelp: 'Aide & Quartier',
@@ -175,7 +182,8 @@ const UI_STRINGS = {
     wifiLabel: 'Wi-Fi',
     ssidLabel: 'Red',
     passLabel: 'Contraseña',
-    qrBtn: 'Mostrar código QR',
+    qrBtn: 'QR',
+    qrHint: 'Escanee con la camara',
     catArrive: 'Llegada',
     catInside: 'Dentro del alojamiento',
     catHelp: 'Ayuda y barrio',
@@ -219,6 +227,38 @@ function copyWifi(el, text) {
     el.classList.remove('copied');
     if (action) action.textContent = old;
   }, 1100);
+}
+let qrRendered = false;
+function toggleQR() {
+  const panel = document.getElementById('wifiQr');
+  const btn = document.getElementById('qrToggle');
+  const open = !panel.classList.contains('visible');
+  panel.classList.toggle('visible', open);
+  btn.setAttribute('aria-expanded', String(open));
+  if (open && !qrRendered) renderQR();
+}
+function wifiQrString() {
+  const esc = s => String(s).replace(/([\\;,":])/g, '\\$1');
+  return `WIFI:T:${WIFI.type};S:${esc(WIFI.ssid)};P:${esc(WIFI.password)};;`;
+}
+function renderQR() {
+  const img = document.getElementById('wifiQrImg');
+  const payload = wifiQrString();
+  const tryLib = () => {
+    if (typeof QRCode === 'undefined') return false;
+    try {
+      const tmp = document.createElement('div');
+      new QRCode(tmp, { text: payload, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M });
+      const canvas = tmp.querySelector('canvas');
+      if (canvas) { img.src = canvas.toDataURL('image/png'); qrRendered = true; return true; }
+      const imgEl = tmp.querySelector('img');
+      if (imgEl && imgEl.src) { img.src = imgEl.src; qrRendered = true; return true; }
+    } catch (e) {}
+    return false;
+  };
+  if (tryLib()) return;
+  img.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(payload)}`;
+  qrRendered = true;
 }
 const savedLang = (() => { try { return localStorage.getItem('sasazukaLang'); } catch (e) { return null; } })();
 if (savedLang && UI_STRINGS[savedLang]) {
