@@ -3,29 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fdf6ee">
-<title>Transportation Services — Sasazuka 2Chōme
-笹塚2丁目</title>
+<meta name="theme-color" content="#f7f9fc">
+<title>Transportation Services - Sasazuka 2Chome</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
+<style>.sub-lang-bar{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px 12px 12px}.sub-lang-bar .lang-btn.active{background:var(--teal-dark);color:#fff;border-color:var(--teal-dark)}.content a,.wifi-detail a{color:var(--teal-dark);font-weight:900}.content ul{font-weight:750}.content strong{color:var(--teal-dark)}</style>
 </head>
 <body>
 <main>
-<div class="top"><a class="back" href="../">←</a><h1>🚖 Transportation Services</h1></div><article class="content"><figure><img src="../images/Screenshot_2026-05-23_at_3.01.22_PM.png" alt="Screenshot 2026-05-23 at 3.01.22 PM.png" loading="lazy"></figure>
-<h4>⭐️Partner Services at Special Rates⭐️</h4>
-<p>🚕Airport Transfer - (Haneda from ¥22,000 / Narita from ¥33,000 per vehicle, up to 9 passengers) Scenic detour options available. Door-to-door from the airport to your accommodation.</p>
-<p>🗻Sightseeing Transfer - (Mt. Fuji, Tokyo Disney, and other major attractions)Rates vary by destination.</p>
-<p>🧳Domestic Luggage Forwarding - Drop your bags at this property — receive them at your next Kansai accommodation the following day.</p>
-<p>Please contact our partner company directly to book.</p>
-<p>Feel free to message us for details.</p>
-<p>⭐️提携サービスをスペシャル価格でご案内⭐️</p>
-<p>🚕空港送迎 - （羽田 22,000円〜／成田 33,000円〜、1台あたり定員9名）寄り道プランあり。空港から宿まで直接お送りします。</p>
-<p>🗻観光地送迎 - （富士山・ディズニーなど主要観光地）　行き先に応じて料金は変動します。</p>
-<p>🧳国内荷物配送 -  こちらの施設で預けた荷物を、翌日の関西方面の次の宿でお受け取り可能。</p>
-<p>ご予約はお客様ご自身で提携先へご連絡ください。ご希望の方はメッセージでご相談ください。</p></article>
-
+<nav class="sub-lang-bar" aria-label="Language"><button class="lang-btn active" onclick="setLang('en', this)">EN</button><button class="lang-btn" onclick="setLang('ja', this)">JA</button><button class="lang-btn" onclick="setLang('zh', this)">ZH</button><button class="lang-btn" onclick="setLang('ko', this)">KO</button><button class="lang-btn" onclick="setLang('fr', this)">FR</button><button class="lang-btn" onclick="setLang('es', this)">ES</button></nav>
+<div class="top"><a class="back" href="../">←</a><h1><span aria-hidden="true">🚖</span> <span data-title>Transportation Services</span></h1></div>
+<article class="content"><div data-content></div>
+<figure><img src="../images/Screenshot_2026-05-23_at_3.01.22_PM.png" alt="Screenshot 2026-05-23 at 3.01.22 PM.png" loading="lazy"></figure></article>
 </main>
+<script>
+const STRINGS={"en":{"title":"Transportation Services","html":"\u003ch3>Partner Services at Special Rates\u003c/h3>\u003cp>Airport transfer: Haneda from ¥22,000 / Narita from ¥33,000 per vehicle, up to 9 passengers. Door-to-door from the airport to your accommodation.\u003c/p>\u003cp>Sightseeing transfer: Mt. Fuji, Tokyo Disney, and other major attractions. Rates vary by destination.\u003c/p>\u003cp>Domestic luggage forwarding: Drop your bags at this property and receive them at your next Kansai accommodation the following day.\u003c/p>\u003cp>Please contact our partner company directly to book. Feel free to message us for details.\u003c/p>"},"ja":{"title":"提携サービス","html":"\u003ch3>提携サービスをスペシャル価格でご案内\u003c/h3>\u003cp>空港送迎: 羽田 22,000円から / 成田 33,000円から。1台あたり定員9名。空港から宿まで直接お送りします。\u003c/p>\u003cp>観光地送迎: 富士山・東京ディズニーなど主要観光地。料金は行き先により変動します。\u003c/p>\u003cp>国内荷物配送: こちらの施設で預けた荷物を、翌日の関西方面の次の宿で受け取り可能です。\u003c/p>\u003cp>ご予約はお客様ご自身で提携先へご連絡ください。詳細はメッセージでご相談ください。\u003c/p>"},"zh":{"title":"合作交通服务","html":"\u003ch3>合作服务特别价格\u003c/h3>\u003cp>机场接送: 羽田 ¥22,000起 / 成田 ¥33,000起，每车最多9人。从机场直达住宿。\u003c/p>\u003cp>观光接送: 富士山、东京迪士尼等主要景点。价格因目的地而异。\u003c/p>\u003cp>国内行李配送: 可在本住宿寄放行李，次日在关西方向的下一家住宿领取。\u003c/p>\u003cp>请直接联系合作公司预订。如需详情，请给我们发消息。\u003c/p>"},"ko":{"title":"제휴 교통 서비스","html":"\u003ch3>제휴 서비스 특별 요금\u003c/h3>\u003cp>공항 송영: 하네다 ¥22,000부터 / 나리타 ¥33,000부터, 차량 1대 최대 9명. 공항에서 숙소까지 직접 이동합니다.\u003c/p>\u003cp>관광지 송영: 후지산, 도쿄 디즈니 등 주요 관광지. 요금은 목적지에 따라 달라집니다.\u003c/p>\u003cp>국내 수하물 배송: 이 숙소에서 맡긴 짐을 다음 날 간사이 지역 다음 숙소에서 받을 수 있습니다.\u003c/p>\u003cp>예약은 제휴 업체에 직접 연락해 주세요. 자세한 내용은 메시지로 문의해 주세요.\u003c/p>"},"fr":{"title":"Services de transport","html":"\u003ch3>Services partenaires a tarifs speciaux\u003c/h3>\u003cp>Transfert aeroport: Haneda a partir de ¥22,000 / Narita a partir de ¥33,000 par vehicule, jusqu'a 9 passagers. Trajet direct jusqu'au logement.\u003c/p>\u003cp>Transfert touristique: Mont Fuji, Tokyo Disney et autres sites majeurs. Les tarifs varient selon la destination.\u003c/p>\u003cp>Envoi de bagages au Japon: deposez vos bagages dans ce logement et recuperez-les le lendemain dans votre prochain logement au Kansai.\u003c/p>\u003cp>Veuillez contacter directement notre partenaire pour reserver. Envoyez-nous un message pour plus de details.\u003c/p>"},"es":{"title":"Servicios de transporte","html":"\u003ch3>Servicios asociados con tarifa especial\u003c/h3>\u003cp>Traslado al aeropuerto: Haneda desde ¥22,000 / Narita desde ¥33,000 por vehiculo, hasta 9 pasajeros. Directo del aeropuerto al alojamiento.\u003c/p>\u003cp>Traslado turistico: Monte Fuji, Tokyo Disney y otros destinos importantes. Las tarifas varian segun el destino.\u003c/p>\u003cp>Envio nacional de equipaje: deje sus maletas en esta propiedad y recibalas al dia siguiente en su proximo alojamiento en Kansai.\u003c/p>\u003cp>Contacte directamente con la empresa asociada para reservar. Puede escribirnos para mas detalles.\u003c/p>"}};
+const LABELS={
+  en:{network:'Network',password:'Password',qr:'Scan with your camera to connect'},
+  ja:{network:'ネットワーク',password:'パスワード',qr:'カメラで読み取って接続できます'},
+  zh:{network:'网络',password:'密码',qr:'用相机扫描即可连接'},
+  ko:{network:'네트워크',password:'비밀번호',qr:'카메라로 스캔하여 연결하세요'},
+  fr:{network:'Reseau',password:'Mot de passe',qr:'Scannez avec votre appareil photo'},
+  es:{network:'Red',password:'Contrasena',qr:'Escanee con la camara'}
+};
+function setLang(lang, btn){
+  const t=STRINGS[lang]||STRINGS.en;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelector('[data-title]').textContent=t.title;
+  document.querySelector('[data-content]').innerHTML=t.html;
+  const labels=LABELS[lang]||LABELS.en;
+  document.querySelectorAll('[data-label]').forEach(el=>{ const k=el.getAttribute('data-label'); if(labels[k]) el.textContent=labels[k]; });
+  localStorage.setItem('sasazukaLang', lang);
+}
+function copyWifi(el,text){
+  navigator.clipboard?.writeText(text);
+  const action=el.querySelector('.wifi-row-action');
+  const old=action?.textContent||'⧉';
+  el.classList.add('copied');
+  if(action) action.textContent='✓';
+  setTimeout(()=>{el.classList.remove('copied'); if(action) action.textContent=old;},1100);
+}
+const saved=localStorage.getItem('sasazukaLang')||'en';
+const btn=document.querySelector(`.lang-btn[onclick*="'${saved}'"]`);
+setLang(saved, btn||document.querySelector('.lang-btn'));
+</script>
 </body>
 </html>
