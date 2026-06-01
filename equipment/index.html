@@ -16,12 +16,12 @@
 <nav class="sub-lang-bar" aria-label="Language"><button class="lang-btn active" onclick="setLang('en', this)">EN</button><button class="lang-btn" onclick="setLang('ja', this)">JA</button><button class="lang-btn" onclick="setLang('zh', this)">ZH</button><button class="lang-btn" onclick="setLang('ko', this)">KO</button><button class="lang-btn" onclick="setLang('fr', this)">FR</button><button class="lang-btn" onclick="setLang('es', this)">ES</button></nav>
 <div class="top"><a class="back" href="../">←</a><h1><span aria-hidden="true">🛠️</span> <span data-title>Equipment</span></h1></div>
 <article class="content"><div data-content></div>
-<figure><img src="../images/.png" alt=".png" loading="lazy"></figure>
-<figure><img src="../images/名称未設定のデザイン_(17).png" alt="名称未設定のデザイン (17).png" loading="lazy"></figure>
-<figure><img src="../images/.jpg" alt=".jpg" loading="lazy"></figure>
-<figure><img src="../images/.jpg" alt=".jpg" loading="lazy"></figure>
-<figure><img src="../images/_(1).png" alt=" (1).png" loading="lazy"></figure>
-<figure><img src="../images/_(4).png" alt=" (4).png" loading="lazy"></figure></article>
+<figure><img src="../images/.png" alt=".png" loading="lazy"><figcaption data-caption="tv"></figcaption></figure>
+<figure><img src="../images/名称未設定のデザイン_(17).png" alt="名称未設定のデザイン (17).png" loading="lazy"><figcaption data-caption="acOverview"></figcaption></figure>
+<figure><img src="../images/.jpg" alt=".jpg" loading="lazy"><figcaption data-caption="acButtons"></figcaption></figure>
+<figure><img src="../images/.jpg" alt=".jpg" loading="lazy"><figcaption data-caption="acMode"></figcaption></figure>
+<figure><img src="../images/_(1).png" alt=" (1).png" loading="lazy"><figcaption data-caption="washlet"></figcaption></figure>
+<figure><img src="../images/_(4).png" alt=" (4).png" loading="lazy"><figcaption data-caption="intercom"></figcaption></figure></article>
 </main>
 <script>
 const STRINGS={"en":{"title":"Equipment","html":"\u003ch3>TV Remote\u003c/h3>\u003cp>1. On/Off\u003c/p>\u003cp>2. Volume\u003c/p>\u003cp>3. Channel\u003c/p>\u003cp>4. Input switching\u003c/p>\u003ch3>Air Conditioner Remote\u003c/h3>\u003cp>Heating, cooling, dry mode, temperature, and stop buttons are shown below.\u003c/p>\u003cp>Use On/Off, mode change, and temperature buttons as needed.\u003c/p>\u003ch3>Washlet (Bidet)\u003c/h3>\u003cp>Use Off, shower toilet, and flush buttons as shown.\u003c/p>\u003ch3>Intercom\u003c/h3>\u003cp>Use Call and Off buttons as shown.\u003c/p>"},"ja":{"title":"設備について","html":"\u003ch3>テレビリモコン\u003c/h3>\u003cp>1. 電源\u003c/p>\u003cp>2. 音量\u003c/p>\u003cp>3. チャンネル\u003c/p>\u003cp>4. 入力切替\u003c/p>\u003ch3>エアコンのリモコン\u003c/h3>\u003cp>暖房、冷房、除湿、温度、停止ボタンは下の写真をご確認ください。\u003c/p>\u003cp>電源、運転切替、温度ボタンを必要に応じてご利用ください。\u003c/p>\u003ch3>ウォシュレット\u003c/h3>\u003cp>停止、洗浄、流すボタンは写真をご確認ください。\u003c/p>\u003ch3>ドアホン\u003c/h3>\u003cp>呼出、切ボタンは写真をご確認ください。\u003c/p>"},"zh":{"title":"设备说明","html":"\u003ch3>电视遥控器\u003c/h3>\u003cp>1. 开/关\u003c/p>\u003cp>2. 音量\u003c/p>\u003cp>3. 频道\u003c/p>\u003cp>4. 输入切换\u003c/p>\u003ch3>空调遥控器\u003c/h3>\u003cp>制热、制冷、除湿、温度和停止按钮如下所示。\u003c/p>\u003cp>请按需要使用开/关、模式切换和温度按钮。\u003c/p>\u003ch3>智能马桶\u003c/h3>\u003cp>停止、清洗和冲水按钮如下所示。\u003c/p>\u003ch3>对讲机\u003c/h3>\u003cp>呼叫和关闭按钮如下所示。\u003c/p>"},"ko":{"title":"설비 안내","html":"\u003ch3>TV 리모컨\u003c/h3>\u003cp>1. 전원\u003c/p>\u003cp>2. 음량\u003c/p>\u003cp>3. 채널\u003c/p>\u003cp>4. 입력 전환\u003c/p>\u003ch3>에어컨 리모컨\u003c/h3>\u003cp>난방, 냉방, 제습, 온도, 정지 버튼은 아래 사진을 확인해 주세요.\u003c/p>\u003cp>전원, 운전 모드 변경, 온도 버튼을 사용해 주세요.\u003c/p>\u003ch3>비데\u003c/h3>\u003cp>정지, 세정, 물내림 버튼은 사진을 확인해 주세요.\u003c/p>\u003ch3>인터폰\u003c/h3>\u003cp>호출 및 끄기 버튼은 사진을 확인해 주세요.\u003c/p>"},"fr":{"title":"Equipements","html":"\u003ch3>Telecommande TV\u003c/h3>\u003cp>1. Marche/arret\u003c/p>\u003cp>2. Volume\u003c/p>\u003cp>3. Chaine\u003c/p>\u003cp>4. Changement d'entree\u003c/p>\u003ch3>Telecommande de climatisation\u003c/h3>\u003cp>Les boutons chauffage, climatisation, deshumidification, temperature et arret sont indiques ci-dessous.\u003c/p>\u003cp>Utilisez marche/arret, changement de mode et temperature selon vos besoins.\u003c/p>\u003ch3>Washlet\u003c/h3>\u003cp>Les boutons arret, douchette et chasse d'eau sont indiques.\u003c/p>\u003ch3>Interphone\u003c/h3>\u003cp>Les boutons appel et arret sont indiques.\u003c/p>"},"es":{"title":"Equipamiento","html":"\u003ch3>Mando de TV\u003c/h3>\u003cp>1. Encendido/apagado\u003c/p>\u003cp>2. Volumen\u003c/p>\u003cp>3. Canal\u003c/p>\u003cp>4. Cambio de entrada\u003c/p>\u003ch3>Mando del aire acondicionado\u003c/h3>\u003cp>Los botones de calefaccion, frio, deshumidificacion, temperatura y parada se muestran abajo.\u003c/p>\u003cp>Use encendido/apagado, cambio de modo y temperatura segun sea necesario.\u003c/p>\u003ch3>Washlet\u003c/h3>\u003cp>Los botones de parada, lavado y descarga se muestran en la foto.\u003c/p>\u003ch3>Interfono\u003c/h3>\u003cp>Los botones de llamada y apagado se muestran en la foto.\u003c/p>"}};
@@ -33,6 +33,56 @@ const LABELS={
   fr:{network:'Reseau',password:'Mot de passe',qr:'Scannez avec votre appareil photo'},
   es:{network:'Red',password:'Contrasena',qr:'Escanee con la camara'}
 };
+const CAPTIONS={
+  en:{
+    tv:'TV remote: power, volume, channel, and input buttons.',
+    acOverview:'Air conditioner remote: heating, cooling, dry mode, temperature, and stop buttons.',
+    acButtons:'Use On/Off to start or stop the air conditioner.',
+    acMode:'Use the mode and temperature buttons to adjust the room.',
+    washlet:'Washlet controls: off, bidet/shower, and flush buttons.',
+    intercom:'Intercom controls: call and off buttons.'
+  },
+  ja:{
+    tv:'テレビリモコン: 電源、音量、チャンネル、入力切替のボタンです。',
+    acOverview:'エアコンリモコン: 暖房、冷房、除湿、温度、停止ボタンです。',
+    acButtons:'エアコンは電源ボタンで運転開始・停止します。',
+    acMode:'運転切替と温度ボタンで室温を調整してください。',
+    washlet:'ウォシュレット: 停止、洗浄、流すボタンです。',
+    intercom:'ドアホン: 呼出、切ボタンです。'
+  },
+  zh:{
+    tv:'电视遥控器：电源、音量、频道和输入切换按钮。',
+    acOverview:'空调遥控器：制热、制冷、除湿、温度和停止按钮。',
+    acButtons:'使用开/关按钮启动或停止空调。',
+    acMode:'使用模式和温度按钮调节室内温度。',
+    washlet:'智能马桶：停止、清洗和冲水按钮。',
+    intercom:'对讲机：呼叫和关闭按钮。'
+  },
+  ko:{
+    tv:'TV 리모컨: 전원, 음량, 채널, 입력 전환 버튼입니다.',
+    acOverview:'에어컨 리모컨: 난방, 냉방, 제습, 온도, 정지 버튼입니다.',
+    acButtons:'전원 버튼으로 에어컨을 켜거나 끌 수 있습니다.',
+    acMode:'운전 모드와 온도 버튼으로 실내 온도를 조절해 주세요.',
+    washlet:'비데: 정지, 세정, 물내림 버튼입니다.',
+    intercom:'인터폰: 호출 및 끄기 버튼입니다.'
+  },
+  fr:{
+    tv:'Telecommande TV: marche/arret, volume, chaine et entree.',
+    acOverview:'Telecommande de climatisation: chauffage, froid, deshumidification, temperature et arret.',
+    acButtons:'Utilisez On/Off pour demarrer ou arreter la climatisation.',
+    acMode:'Utilisez les boutons de mode et de temperature pour regler la piece.',
+    washlet:'Washlet: boutons arret, douchette et chasse d eau.',
+    intercom:'Interphone: boutons appel et arret.'
+  },
+  es:{
+    tv:'Mando de TV: encendido, volumen, canal y cambio de entrada.',
+    acOverview:'Mando del aire acondicionado: calefaccion, frio, deshumidificacion, temperatura y parada.',
+    acButtons:'Use On/Off para iniciar o detener el aire acondicionado.',
+    acMode:'Use los botones de modo y temperatura para ajustar la habitacion.',
+    washlet:'Washlet: botones de parada, lavado y descarga.',
+    intercom:'Interfono: botones de llamada y apagado.'
+  }
+};
 function setLang(lang, btn){
   const t=STRINGS[lang]||STRINGS.en;
   document.documentElement.lang=lang;
@@ -42,6 +92,8 @@ function setLang(lang, btn){
   document.querySelector('[data-content]').innerHTML=t.html;
   const labels=LABELS[lang]||LABELS.en;
   document.querySelectorAll('[data-label]').forEach(el=>{ const k=el.getAttribute('data-label'); if(labels[k]) el.textContent=labels[k]; });
+  const captions=CAPTIONS[lang]||CAPTIONS.en;
+  document.querySelectorAll('[data-caption]').forEach(el=>{ const k=el.getAttribute('data-caption'); if(captions[k]) el.textContent=captions[k]; });
   localStorage.setItem('sasazukaLang', lang);
 }
 function copyWifi(el,text){
