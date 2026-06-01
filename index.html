@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=hero-welcome">
+<link rel="stylesheet" href="assets/site.css?v=emergency-strip">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -41,6 +41,26 @@
 <a href="gas-reset/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🔥</span></span><span class="pl-en" data-i18n="btnGas">Gas Reset</span><span class="pl-ja">ガスメーター復帰</span></a>
 <a href="emergency/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">☎️</span></span><span class="pl-en" data-i18n="btnEmergency">Emergency</span><span class="pl-ja">緊急時の連絡方法</span></a>
 <a href="transportation/" class="pl-btn"><span class="pl-icon-wrap"><span class="pl-icon" aria-hidden="true">🚖</span></span><span class="pl-en" data-i18n="btnTransport">Transportation Services</span><span class="pl-ja">提携サービス</span></a></div></div></nav>
+<aside class="emergency-strip" aria-labelledby="em-title">
+  <div class="emergency-head">
+    <span class="em-icon" aria-hidden="true">🚨</span>
+    <span class="em-title" id="em-title" data-i18n="emergencyTitle">Emergency</span>
+  </div>
+  <div class="em-buttons">
+    <a href="tel:119" class="em-btn">
+      <span class="em-btn-label" data-i18n="emFire">🚒 Fire</span>
+      <span class="em-btn-num">119</span>
+    </a>
+    <a href="tel:119" class="em-btn">
+      <span class="em-btn-label" data-i18n="emAmb">🚑 Ambulance</span>
+      <span class="em-btn-num">119</span>
+    </a>
+    <a href="tel:110" class="em-btn">
+      <span class="em-btn-label" data-i18n="emPolice">👮 Police</span>
+      <span class="em-btn-num">110</span>
+    </a>
+  </div>
+</aside>
 </main>
 <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@master/qrcode.min.js" defer></script>
 <script>
@@ -70,7 +90,11 @@ const UI_STRINGS = {
     btnBreaker: 'Circuit Breaker',
     btnGas: 'Gas Reset',
     btnEmergency: 'Emergency',
-    btnTransport: 'Transportation Services'
+    btnTransport: 'Transportation Services',
+    emergencyTitle: 'Emergency',
+    emFire: '🚒 Fire',
+    emAmb: '🚑 Ambulance',
+    emPolice: '👮 Police'
   },
   ja: {
     guideInfo: 'Welcome guide',
@@ -96,7 +120,11 @@ const UI_STRINGS = {
     btnBreaker: 'ブレーカーについて',
     btnGas: 'ガスメーター復帰',
     btnEmergency: '緊急時の連絡方法',
-    btnTransport: '提携サービス'
+    btnTransport: '提携サービス',
+    emergencyTitle: '緊急連絡先',
+    emFire: '🚒 消防',
+    emAmb: '🚑 救急',
+    emPolice: '👮 警察'
   },
   zh: {
     guideInfo: 'Welcome guide',
@@ -122,7 +150,11 @@ const UI_STRINGS = {
     btnBreaker: '断路器',
     btnGas: '燃气复位',
     btnEmergency: '紧急联系',
-    btnTransport: '交通服务'
+    btnTransport: '交通服务',
+    emergencyTitle: '紧急联系',
+    emFire: '🚒 消防',
+    emAmb: '🚑 救护',
+    emPolice: '👮 警察'
   },
   ko: {
     guideInfo: 'Welcome guide',
@@ -148,7 +180,11 @@ const UI_STRINGS = {
     btnBreaker: '차단기',
     btnGas: '가스 복구',
     btnEmergency: '긴급 연락',
-    btnTransport: '교통 서비스'
+    btnTransport: '교통 서비스',
+    emergencyTitle: '긴급 연락처',
+    emFire: '🚒 소방',
+    emAmb: '🚑 구급',
+    emPolice: '👮 경찰'
   },
   fr: {
     guideInfo: 'Welcome guide',
@@ -174,7 +210,11 @@ const UI_STRINGS = {
     btnBreaker: 'Disjoncteur',
     btnGas: 'Reinitialisation du gaz',
     btnEmergency: 'Urgences',
-    btnTransport: 'Services de transport'
+    btnTransport: 'Services de transport',
+    emergencyTitle: 'Urgences',
+    emFire: '🚒 Pompiers',
+    emAmb: '🚑 Ambulance',
+    emPolice: '👮 Police'
   },
   es: {
     guideInfo: 'Welcome guide',
@@ -200,7 +240,11 @@ const UI_STRINGS = {
     btnBreaker: 'Disyuntor',
     btnGas: 'Reinicio del gas',
     btnEmergency: 'Emergencias',
-    btnTransport: 'Servicios de transporte'
+    btnTransport: 'Servicios de transporte',
+    emergencyTitle: 'Emergencias',
+    emFire: '🚒 Bomberos',
+    emAmb: '🚑 Ambulancia',
+    emPolice: '👮 Policía'
   }
 };
 function applyTranslations(lang) {
